@@ -2,7 +2,7 @@
     "name": "PlayerInputActions",
     "maps": [
         {
-            "name": "Player",
+            "name": "DancingSeedPlayer",
             "id": "eaab540d-765f-49b9-ad95-7dde01280aed",
             "actions": [
                 {
@@ -84,6 +84,34 @@
                     "processors": "",
                     "groups": "",
                     "action": "MoveRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "PickTheIngredientsPlayer",
+            "id": "166762b3-cad6-4fd5-aa79-13f77cbf30b0",
+            "actions": [
+                {
+                    "name": "Grab",
+                    "type": "Button",
+                    "id": "53ea496c-270b-4d22-bcbf-64d81684a054",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "b383e98c-3443-4fa0-b0c3-49198eb00a44",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Grab",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

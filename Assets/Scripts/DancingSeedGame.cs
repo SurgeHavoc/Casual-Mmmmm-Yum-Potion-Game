@@ -58,20 +58,20 @@ public class DancingSeedGame : MonoBehaviour
     {
         InputActions = new PlayerInputActions();
 
-        InputActions.Player.MoveUp.performed += ctx => OnMove("Yellow");
-        InputActions.Player.MoveDown.performed += ctx => OnMove("Green");
-        InputActions.Player.MoveLeft.performed += ctx => OnMove("Blue");
-        InputActions.Player.MoveRight.performed += ctx => OnMove("Red");
+        InputActions.DancingSeedPlayer.MoveUp.performed += ctx => OnMove("Yellow");
+        InputActions.DancingSeedPlayer.MoveDown.performed += ctx => OnMove("Green");
+        InputActions.DancingSeedPlayer.MoveLeft.performed += ctx => OnMove("Blue");
+        InputActions.DancingSeedPlayer.MoveRight.performed += ctx => OnMove("Red");
     }
 
     private void OnEnable()
     {
-        InputActions.Player.Enable();
+        InputActions.DancingSeedPlayer.Enable();
     }
 
     private void OnDisable()
     {
-        InputActions.Player.Disable();
+        InputActions.DancingSeedPlayer.Disable();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
