@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      GrabPlant_RaccoonPlant_0: -3760445204457415972
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

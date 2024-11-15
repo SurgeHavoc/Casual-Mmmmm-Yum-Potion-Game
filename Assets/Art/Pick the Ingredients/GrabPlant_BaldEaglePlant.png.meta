@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      GrabPlant_BaldEaglePlant_0: 8093885318444114128
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

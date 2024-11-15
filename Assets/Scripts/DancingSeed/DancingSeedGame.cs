@@ -14,6 +14,8 @@ public class DancingSeedGame : MonoBehaviour
     public SpriteRenderer PlayerRenderer;
     public int TotalRounds = 3; // Can be up to five!
 
+    public PauseScript pause; // PauseMenu
+
     private List<string> colors = new List<string> { "Red", "Blue", "Green", "Yellow" };
     private Dictionary<string, KeyCode> ColorKeyMap = new Dictionary<string, KeyCode>
     {
@@ -62,6 +64,9 @@ public class DancingSeedGame : MonoBehaviour
         InputActions.DancingSeedPlayer.MoveDown.performed += ctx => OnMove("Green");
         InputActions.DancingSeedPlayer.MoveLeft.performed += ctx => OnMove("Blue");
         InputActions.DancingSeedPlayer.MoveRight.performed += ctx => OnMove("Red");
+
+        // Allows the Pause Menu to function -Asha
+        pause = GetComponent<PauseScript>();
     }
 
     private void OnEnable()
@@ -209,6 +214,15 @@ public class DancingSeedGame : MonoBehaviour
                 // Start the blinking timer when time is running out to complete the minigame.
                 BlinkTimer();
             }
+        }
+
+        // Hey Antonio this was the only way I could get the pause menu to work pls don't delete -Asha
+         if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.JoystickButton7)) 
+        {
+            if(!pause.GameIsPaused)
+                    pause.Paused();
+                else
+                    pause.Resume();
         }
 
         if (Input.anyKeyDown)

@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      GrabPlant_UmbrellaBirdPlant_0: 7438510002426168388
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

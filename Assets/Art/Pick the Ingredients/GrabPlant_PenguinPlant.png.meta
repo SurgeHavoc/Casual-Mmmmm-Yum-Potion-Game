@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      GrabPlant_PenguinPlant_0: 1599486397504852246
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

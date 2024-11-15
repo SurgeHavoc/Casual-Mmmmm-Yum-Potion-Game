@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      GrabPlant_PolarBearPlant_0: -1465627873022320835
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

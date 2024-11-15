@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviour
     public Button RestartButton;
     public Button MainMenuButton;
 
+    public PauseScript pause; // PauseMenu
+
     void Awake()
     {
         if (Instance == null)
@@ -37,6 +39,9 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        // Allows the Pause Menu to function -Asha
+        pause = GetComponent<PauseScript>();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -86,6 +91,15 @@ public class GameManager : MonoBehaviour
                 // Start the blinking timer when time is running out to complete the minigame.
                 BlinkTimer();
             }
+        }
+
+        // Hey Antonio this was the only way I could get the pause menu to work pls don't delete -Asha
+         if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.JoystickButton7)) 
+        {
+            if(!pause.GameIsPaused)
+                    pause.Paused();
+                else
+                    pause.Resume();
         }
     }
 
