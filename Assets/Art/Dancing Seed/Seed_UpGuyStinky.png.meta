@@ -223,7 +223,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Seed_UpGuyStinky_0: -6567419489782639160
+      Seed_UpGuyStinky_1: -1328661853838898932
+      Seed_UpGuyStinky_2: 7813611773585185719
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

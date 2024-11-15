@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      GrabPlant_FerretPlant_0: 9209543263992604419
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

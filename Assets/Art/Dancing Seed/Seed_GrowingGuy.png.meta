@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Seed_GrowingGuy_0: -4334770155644052714
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

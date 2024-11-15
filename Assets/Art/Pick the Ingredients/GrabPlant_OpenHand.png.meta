@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      GrabPlant_OpenHand_0: -3293804203959772083
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

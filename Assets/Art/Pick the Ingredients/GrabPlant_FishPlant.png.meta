@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      GrabPlant_FishPlant_0: 5714032812288050183
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
