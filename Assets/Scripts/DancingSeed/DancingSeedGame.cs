@@ -14,6 +14,13 @@ public class DancingSeedGame : MonoBehaviour
     public SpriteRenderer PlayerRenderer;
     public int TotalRounds = 3; // Can be up to five!
 
+    public Sprite IdleSprite;
+    public Sprite LeftPoseSprite;
+    public Sprite UpPoseSprite;
+    public Sprite UpStinkySprite;
+    public Sprite DownPoseSprite;
+    public Sprite RightPoseSprite;
+
     public PauseScript pause; // PauseMenu
 
     private List<string> colors = new List<string> { "Red", "Blue", "Green", "Yellow" };
@@ -243,7 +250,14 @@ public class DancingSeedGame : MonoBehaviour
         if (!IsInputEnabled)
             return;
 
+        ChangeSeedPose(ColorName);
+
         CheckInput(ColorName);
+    }
+
+    private void ChangeSeedPose(string ColorName)
+    {
+        
     }
 
     void StartRound()
