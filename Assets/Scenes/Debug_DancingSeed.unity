@@ -663,6 +663,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6875026551308380903, guid: 947cd6a5649bf2e4ebf95e10e2e0c61b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0e537ff43634d96448780b2fb61a86f3, type: 3}
     - target: {fileID: 7334590070991369837, guid: 947cd6a5649bf2e4ebf95e10e2e0c61b, type: 3}
       propertyPath: m_Name
       value: Seed
@@ -733,25 +737,53 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 360799816}
     - target: {fileID: 8937675803569314313, guid: e628714511a78c84a9374902592169c5, type: 3}
+      propertyPath: IdleSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0e537ff43634d96448780b2fb61a86f3, type: 3}
+    - target: {fileID: 8937675803569314313, guid: e628714511a78c84a9374902592169c5, type: 3}
       propertyPath: GameOverText
       value: 
       objectReference: {fileID: 1340165516}
+    - target: {fileID: 8937675803569314313, guid: e628714511a78c84a9374902592169c5, type: 3}
+      propertyPath: UpPoseSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 505854f8b9a777047a8577bf098fc47b, type: 3}
     - target: {fileID: 8937675803569314313, guid: e628714511a78c84a9374902592169c5, type: 3}
       propertyPath: CountdownText
       value: 
       objectReference: {fileID: 1704393670}
     - target: {fileID: 8937675803569314313, guid: e628714511a78c84a9374902592169c5, type: 3}
+      propertyPath: DownPoseSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4c2eb6a918036234aac229bf9a5c182c, type: 3}
+    - target: {fileID: 8937675803569314313, guid: e628714511a78c84a9374902592169c5, type: 3}
       propertyPath: KeyPromptPanel
       value: 
       objectReference: {fileID: 1003178160}
+    - target: {fileID: 8937675803569314313, guid: e628714511a78c84a9374902592169c5, type: 3}
+      propertyPath: LeftPoseSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5ab5f4712d934a94d8afa9aa7997aef6, type: 3}
     - target: {fileID: 8937675803569314313, guid: e628714511a78c84a9374902592169c5, type: 3}
       propertyPath: PlayerRenderer
       value: 
       objectReference: {fileID: 67748033}
     - target: {fileID: 8937675803569314313, guid: e628714511a78c84a9374902592169c5, type: 3}
+      propertyPath: UpStinkySprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b38b771e2e642904a8434b44a311b7f0, type: 3}
+    - target: {fileID: 8937675803569314313, guid: e628714511a78c84a9374902592169c5, type: 3}
+      propertyPath: RightPoseSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b880faaff9cded047a016207f18fa9cb, type: 3}
+    - target: {fileID: 8937675803569314313, guid: e628714511a78c84a9374902592169c5, type: 3}
       propertyPath: RoundCompleteText
       value: 
       objectReference: {fileID: 1030291791}
+    - target: {fileID: 8937675803569314313, guid: e628714511a78c84a9374902592169c5, type: 3}
+      propertyPath: UpStinkyPoseSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b38b771e2e642904a8434b44a311b7f0, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

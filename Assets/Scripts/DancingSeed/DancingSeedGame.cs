@@ -17,7 +17,7 @@ public class DancingSeedGame : MonoBehaviour
     public Sprite IdleSprite;
     public Sprite LeftPoseSprite;
     public Sprite UpPoseSprite;
-    public Sprite UpStinkySprite;
+    public Sprite UpStinkyPoseSprite;
     public Sprite DownPoseSprite;
     public Sprite RightPoseSprite;
 
@@ -239,6 +239,7 @@ public class DancingSeedGame : MonoBehaviour
                 if (Input.GetKeyDown(ColorKeyMap[ColorName]))
                 {
                     CheckInput(ColorName);
+                    ChangeSeedPose(ColorName);
                     break;
                 }
             }
@@ -247,17 +248,59 @@ public class DancingSeedGame : MonoBehaviour
 
     private void OnMove(string ColorName)
     {
+        Debug.Log("OnMove called with ColorName " + ColorName);
         if (!IsInputEnabled)
             return;
 
-        ChangeSeedPose(ColorName);
+        //ChangeSeedPose(ColorName);
 
         CheckInput(ColorName);
     }
 
     private void ChangeSeedPose(string ColorName)
     {
-        
+        Debug.Log("ChangeSeedPose called with ColorName " + ColorName);
+        Sprite NewSprite = IdleSprite;
+
+        switch(ColorName)
+        {
+            case "Red":
+                NewSprite = RightPoseSprite;
+                break;
+            case "Blue":
+                NewSprite = LeftPoseSprite;
+                break;
+            case "Green":
+                NewSprite = DownPoseSprite;
+                break;
+            case "Yellow":
+                float chance = Random.Range(0f, 1f);
+                if (chance < 0.4f)
+                {
+                    NewSprite = UpStinkyPoseSprite;
+                    Debug.Log("UpStinkyPoseSprite selected with chance: " + chance);
+                }
+                else
+                {
+                    NewSprite = UpPoseSprite;
+                    Debug.Log("UpPoseSprite selected with chance: " + chance);
+                }
+                break;
+            default:
+                Debug.LogWarning("Unknown ColorName: " + ColorName);
+                break;
+        }
+
+        PlayerRenderer.sprite = NewSprite;
+        Debug.Log("Changed sprite to " + NewSprite.name);
+
+        CancelInvoke("ResetSeedPose");
+        Invoke("ResetSeedPose", 1.5f);
+    }
+
+    private void ResetSeedPose()
+    {
+        PlayerRenderer.sprite = IdleSprite;
     }
 
     void StartRound()
@@ -319,7 +362,7 @@ public class DancingSeedGame : MonoBehaviour
         if(InputColor == CurrentSequence[CurrentInputIndex])
         {
             // If input is correct, change the player accordingly.
-            PlayerRenderer.color = ColorMap[InputColor];
+            //PlayerRenderer.color = ColorMap[InputColor];
 
             CurrentInputIndex++;
 
@@ -349,7 +392,7 @@ public class DancingSeedGame : MonoBehaviour
             Debug.Log("Incorrect input. Try again.");
 
             // On incorrect input, change the player color to indicate an error, oh noes!
-            PlayerRenderer.color = Color.black;
+            //PlayerRenderer.color = Color.black;
 
             IsInputEnabled = false;
             // Restart the round after a delay.
