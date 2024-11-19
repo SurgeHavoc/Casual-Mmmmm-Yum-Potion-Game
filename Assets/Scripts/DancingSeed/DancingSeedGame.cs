@@ -22,6 +22,7 @@ public class DancingSeedGame : MonoBehaviour
     public Sprite RightPoseSprite;
 
     public PauseScript pause; // PauseMenu
+    public GameObject failPopUp;
 
     private List<string> colors = new List<string> { "Red", "Blue", "Green", "Yellow" };
     private Dictionary<string, KeyCode> ColorKeyMap = new Dictionary<string, KeyCode>
@@ -215,6 +216,7 @@ public class DancingSeedGame : MonoBehaviour
                 IsTimerRunning = false;
                 UpdateTimerDisplay();
                 GameOver();
+                failPopUp.SetActive(true);
             }
             else if (TimeRemaining <= 5)
             {

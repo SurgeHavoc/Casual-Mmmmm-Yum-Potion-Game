@@ -33,6 +33,7 @@ public class DragAndDrop : MonoBehaviour
             // Update the position while dragging the sprite.
             transform.position = GetMouseWorldPosition() + offset;
         }
+
     }
 
     // A helper method to get the mouse position in world coordinates.

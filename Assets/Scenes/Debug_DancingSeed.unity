@@ -622,6 +622,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6952161744882812665, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7198306776967819132, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
       propertyPath: m_Name
       value: MainMenuBar
@@ -691,6 +695,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 678226847}
   m_SourcePrefab: {fileID: 100100000, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
+--- !u!1 &1613197139 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2193756377235899898, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
+  m_PrefabInstance: {fileID: 1613197138}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1638680130
 GameObject:
   m_ObjectHideFlags: 0
@@ -914,6 +923,10 @@ PrefabInstance:
       propertyPath: TimerText
       value: 
       objectReference: {fileID: 360799816}
+    - target: {fileID: 8937675803569314313, guid: e628714511a78c84a9374902592169c5, type: 3}
+      propertyPath: failPopUp
+      value: 
+      objectReference: {fileID: 1613197139}
     - target: {fileID: 8937675803569314313, guid: e628714511a78c84a9374902592169c5, type: 3}
       propertyPath: IdleSprite
       value: 
