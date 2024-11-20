@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     private int TotalIngredients;
     private int CollectedIngredients = 0;
 
-    public float TimeLimit = 60f;
+    public float TimeLimit = 65f;
     private float TimeRemaining;
     public TextMeshProUGUI TimerText;
     private bool IsTimerRunning = false;
@@ -202,6 +202,9 @@ public class GameManager : MonoBehaviour
                 GameCompleteText.text = "Minigame complete!";
             }
 
+            RestartButton.gameObject.SetActive(false);
+            MainMenuButton.gameObject.SetActive(false);
+
             //RestartButton.gameObject.SetActive(true);
             //MainMenuButton.gameObject.SetActive(true);
 
@@ -211,11 +214,26 @@ public class GameManager : MonoBehaviour
             //RestartButton.onClick.AddListener(ProceedToNextMinigame);
             //MainMenuButton.onClick.AddListener(ReturnToMainMenu);
         }
+
+        Invoke("ProceedToNextMinigame", 3f);
     }
 
     void ProceedToNextMinigame()
     {
         Debug.Log("Proceed to the next minigame!");
+
+        int CurrentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+        int NextSceneIndex = CurrentSceneIndex + 1;
+
+        if (NextSceneIndex < SceneManager.sceneCountInBuildSettings)
+        {
+            SceneManager.LoadScene(NextSceneIndex);
+        }
+        else
+        {
+            Debug.Log("No more scenes. Maybe pause the game and exit?");
+        }
     }
 
     private void OnDisable()

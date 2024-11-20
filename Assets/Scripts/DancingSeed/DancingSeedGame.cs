@@ -6,10 +6,11 @@ using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using Unity.VisualScripting;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class DancingSeedGame : MonoBehaviour
 {
-    public GameObject KeyPromptPrefab;
+    public GameObject ArrowPromptPrefab;
     public Transform KeyPromptPanel;
     public SpriteRenderer PlayerRenderer;
     public int TotalRounds = 3; // Can be up to five!
@@ -20,12 +21,21 @@ public class DancingSeedGame : MonoBehaviour
     public Sprite UpStinkyPoseSprite;
     public Sprite DownPoseSprite;
     public Sprite RightPoseSprite;
+    public Sprite TransformationSprite;
 
     public PauseScript pause; // PauseMenu
     public GameObject failPopUp;
 
-    private List<string> colors = new List<string> { "Red", "Blue", "Green", "Yellow" };
-    private Dictionary<string, KeyCode> ColorKeyMap = new Dictionary<string, KeyCode>
+    //private List<string> colors = new List<string> { "Red", "Blue", "Green", "Yellow" };
+    private List<string> directions = new List<string> { "Up", "Down", "Left", "Right" };
+    private Dictionary<string, KeyCode> DirectionKeyMap = new Dictionary<string, KeyCode>
+    {
+        { "Up", KeyCode.UpArrow },
+        { "Down", KeyCode.DownArrow },
+        { "Left", KeyCode.LeftArrow },
+        { "Right", KeyCode.RightArrow }
+    };
+    /*private Dictionary<string, KeyCode> ColorKeyMap = new Dictionary<string, KeyCode>
     {
         { "Yellow", KeyCode.UpArrow },
         { "Green", KeyCode.DownArrow },
@@ -38,7 +48,7 @@ public class DancingSeedGame : MonoBehaviour
         { "Blue", Color.blue },
         { "Green", Color.green },
         { "Yellow", Color.yellow }
-    };
+    };*/
 
     private List<string> CurrentSequence = new List<string>();
     private int CurrentInputIndex = 0;
@@ -68,10 +78,15 @@ public class DancingSeedGame : MonoBehaviour
     {
         InputActions = new PlayerInputActions();
 
-        InputActions.DancingSeedPlayer.MoveUp.performed += ctx => OnMove("Yellow");
+        /*InputActions.DancingSeedPlayer.MoveUp.performed += ctx => OnMove("Yellow");
         InputActions.DancingSeedPlayer.MoveDown.performed += ctx => OnMove("Green");
         InputActions.DancingSeedPlayer.MoveLeft.performed += ctx => OnMove("Blue");
-        InputActions.DancingSeedPlayer.MoveRight.performed += ctx => OnMove("Red");
+        InputActions.DancingSeedPlayer.MoveRight.performed += ctx => OnMove("Red");*/
+
+        InputActions.DancingSeedPlayer.MoveUp.performed += ctx => OnMove("Up");
+        InputActions.DancingSeedPlayer.MoveDown.performed += ctx => OnMove("Down");
+        InputActions.DancingSeedPlayer.MoveLeft.performed += ctx => OnMove("Left");
+        InputActions.DancingSeedPlayer.MoveRight.performed += ctx => OnMove("Right");
 
         // Allows the Pause Menu to function -Asha
         pause = GetComponent<PauseScript>();
@@ -90,6 +105,20 @@ public class DancingSeedGame : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        TotalRounds = Random.Range(3, 6); // Rounds 3 - 5 are included since Random.Range with int maxExlusive is exclusive. (int minInclusive, int maxExclusive).
+        switch (TotalRounds)
+        {
+            case 3:
+                TimeLimit = 20f;
+                break;
+            case 4:
+                TimeLimit = 30f;
+                break;
+            case 5:
+                TimeLimit = 40f;
+                break;
+        }
+
         // Initialize the timer here.
         TimeRemaining = TimeLimit;
         UpdateTimerDisplay();
@@ -236,48 +265,48 @@ public class DancingSeedGame : MonoBehaviour
 
         if (Input.anyKeyDown)
         {
-            foreach (var ColorName in colors)
+            foreach (var direction in directions)
             {
-                if (Input.GetKeyDown(ColorKeyMap[ColorName]))
+                if (Input.GetKeyDown(DirectionKeyMap[direction]))
                 {
-                    CheckInput(ColorName);
-                    ChangeSeedPose(ColorName);
+                    CheckInput(direction);
+                    ChangeSeedPose(direction);
                     break;
                 }
             }
         }
     }
 
-    private void OnMove(string ColorName)
+    private void OnMove(string DirectionName)
     {
-        Debug.Log("OnMove called with ColorName " + ColorName);
+        Debug.Log("OnMove called with DirectionName " + DirectionName);
         if (!IsInputEnabled)
             return;
 
         //ChangeSeedPose(ColorName);
 
-        CheckInput(ColorName);
+        CheckInput(DirectionName);
     }
 
-    private void ChangeSeedPose(string ColorName)
+    private void ChangeSeedPose(string DirectionName)
     {
-        Debug.Log("ChangeSeedPose called with ColorName " + ColorName);
+        Debug.Log("ChangeSeedPose called with DirectionName" + DirectionName);
         Sprite NewSprite = IdleSprite;
 
-        switch(ColorName)
+        switch(DirectionName)
         {
-            case "Red":
+            case "Right":
                 NewSprite = RightPoseSprite;
                 break;
-            case "Blue":
+            case "Left":
                 NewSprite = LeftPoseSprite;
                 break;
-            case "Green":
+            case "Down":
                 NewSprite = DownPoseSprite;
                 break;
-            case "Yellow":
+            case "Up":
                 float chance = Random.Range(0f, 1f);
-                if (chance < 0.4f)
+                if (chance < 0.3f)
                 {
                     NewSprite = UpStinkyPoseSprite;
                     Debug.Log("UpStinkyPoseSprite selected with chance: " + chance);
@@ -289,7 +318,7 @@ public class DancingSeedGame : MonoBehaviour
                 }
                 break;
             default:
-                Debug.LogWarning("Unknown ColorName: " + ColorName);
+                Debug.LogWarning("Unknown DirectionName: " + DirectionName);
                 break;
         }
 
@@ -297,12 +326,26 @@ public class DancingSeedGame : MonoBehaviour
         Debug.Log("Changed sprite to " + NewSprite.name);
 
         CancelInvoke("ResetSeedPose");
-        Invoke("ResetSeedPose", 1.5f);
+        if (CurrentRound >= TotalRounds)
+        {
+            Invoke("ResetSeedPose", 0.5f);
+        }
+        else
+        {
+            Invoke("ResetSeedPose", 1.5f);
+        }
     }
 
     private void ResetSeedPose()
     {
-        PlayerRenderer.sprite = IdleSprite;
+        if (CurrentRound >= TotalRounds)
+        {
+            PlayerRenderer.sprite = TransformationSprite;
+        }
+        else
+        {
+            PlayerRenderer.sprite = IdleSprite;
+        }
     }
 
     void StartRound()
@@ -323,8 +366,8 @@ public class DancingSeedGame : MonoBehaviour
         // Generate a random sequence on round start.
         for (int i = 0; i < SequenceLength; i++)
         {
-            string ColorName = colors[Random.Range(0, colors.Count)];
-            CurrentSequence.Add(ColorName);
+            string direction = directions[Random.Range(0, directions.Count)];
+            CurrentSequence.Add(direction);
         }
 
         CurrentInputIndex = 0;
@@ -349,19 +392,44 @@ public class DancingSeedGame : MonoBehaviour
             Destroy(child.gameObject);
         }
 
+        // Instantiate the current prompt UI using an arrow as the prompt.
+        string direction = CurrentSequence[CurrentInputIndex];
+        GameObject prompt = Instantiate(ArrowPromptPrefab, KeyPromptPanel);
+        RectTransform PromptRect = prompt.GetComponent<RectTransform>();
+
+        float RotationAngle = 0f;
+
+        switch (direction)
+        {
+            case "Up":
+                RotationAngle = 0f;
+                break;
+            case "Right":
+                RotationAngle = 270f;
+                break;
+            case "Down":
+                RotationAngle = 180f;
+                break;
+            case "Left":
+                RotationAngle = 90f;
+                break;
+        }
+
+        PromptRect.localRotation = Quaternion.Euler(0f, 0f, RotationAngle);
+
         // Instantiate the current prompt UI.
-        string ColorName = CurrentSequence[CurrentInputIndex];
+        /*string ColorName = CurrentSequence[CurrentInputIndex];
         GameObject prompt = Instantiate(KeyPromptPrefab, KeyPromptPanel);
         Image PromptImage = prompt.GetComponent<Image>();
         if (PromptImage != null)
         {
             PromptImage.color = ColorMap[ColorName];
-        }
+        }*/
     }
 
-    void CheckInput(string InputColor)
+    void CheckInput(string InputDirection)
     {
-        if(InputColor == CurrentSequence[CurrentInputIndex])
+        if(InputDirection == CurrentSequence[CurrentInputIndex])
         {
             // If input is correct, change the player accordingly.
             //PlayerRenderer.color = ColorMap[InputColor];
@@ -499,19 +567,19 @@ public class DancingSeedGame : MonoBehaviour
     {
         Debug.Log("Game Complete!");
 
-        PlayerRenderer.color = Color.white;
+        //PlayerRenderer.color = Color.white;
 
         IsInputEnabled = false;
 
         IsTimerRunning = false;
 
-        if(RoundCompleteText != null)
+        if (RoundCompleteText != null)
         {
             RoundCompleteText.gameObject.SetActive(true);
             RoundCompleteText.text = "Game Complete!";
         }
 
-        Invoke("ProceedToNextMinigame", 2f);
+        Invoke("ProceedToNextMinigame", 3f);
     }
 
     void ProceedToNextMinigame()
@@ -522,5 +590,17 @@ public class DancingSeedGame : MonoBehaviour
         }
 
         Debug.Log("Proceeding to the next minigame.");
+
+        int CurrentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int NextSceneIndex = CurrentSceneIndex + 1;
+
+        if (NextSceneIndex < SceneManager. sceneCountInBuildSettings)
+        {
+            SceneManager.LoadScene(NextSceneIndex);
+        }
+        else
+        {
+            Debug.Log("No more scenes. Maybe pause the game and exit?");
+        }
     }
 }

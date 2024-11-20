@@ -189,12 +189,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -3065453564202325942, guid: 3140ffa7a939e6e41b829524805b7c9e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3140ffa7a939e6e41b829524805b7c9e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 18.45, y: 19.13}
+  m_Size: {x: 20.48, y: 20.48}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -572,7 +572,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 6053555909024767540, guid: a2247e110dcd11a40b5bad3e467e2e2a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a2247e110dcd11a40b5bad3e467e2e2a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -968,6 +968,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: b880faaff9cded047a016207f18fa9cb, type: 3}
     - target: {fileID: 8937675803569314313, guid: e628714511a78c84a9374902592169c5, type: 3}
+      propertyPath: ArrowPromptPrefab
+      value: 
+      objectReference: {fileID: 1317249035256272296, guid: 01081a260a0851d4296a55d13cc64850, type: 3}
+    - target: {fileID: 8937675803569314313, guid: e628714511a78c84a9374902592169c5, type: 3}
       propertyPath: RoundCompleteText
       value: 
       objectReference: {fileID: 1030291791}
@@ -975,6 +979,10 @@ PrefabInstance:
       propertyPath: UpStinkyPoseSprite
       value: 
       objectReference: {fileID: 21300000, guid: b38b771e2e642904a8434b44a311b7f0, type: 3}
+    - target: {fileID: 8937675803569314313, guid: e628714511a78c84a9374902592169c5, type: 3}
+      propertyPath: TransformationSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1a410573b3ce7e14aa23bcc3e970c454, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -991,6 +999,42 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 745902519766715777, guid: ca934e2173296e24cbb9529612da1d6f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 745902519766715777, guid: ca934e2173296e24cbb9529612da1d6f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 745902519766715777, guid: ca934e2173296e24cbb9529612da1d6f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 745902519766715777, guid: ca934e2173296e24cbb9529612da1d6f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -264
+      objectReference: {fileID: 0}
+    - target: {fileID: 1088941111864504833, guid: ca934e2173296e24cbb9529612da1d6f, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095150156551031696, guid: ca934e2173296e24cbb9529612da1d6f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095150156551031696, guid: ca934e2173296e24cbb9529612da1d6f, type: 3}
+      propertyPath: m_ChildScaleWidth
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095150156551031696, guid: ca934e2173296e24cbb9529612da1d6f, type: 3}
+      propertyPath: m_ChildScaleHeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095150156551031696, guid: ca934e2173296e24cbb9529612da1d6f, type: 3}
+      propertyPath: m_ChildControlWidth
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6276157011665674273, guid: ca934e2173296e24cbb9529612da1d6f, type: 3}
       propertyPath: m_Name
       value: Canvas

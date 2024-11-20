@@ -36,6 +36,11 @@ public class ClawHandController : MonoBehaviour
 
     private PlayerInputActions InputActions;
 
+    public Sprite OpenHandSprite;
+    public Sprite PinchedHandSprite;
+
+    private Image HandImage;
+
     private void Awake()
     {
         if(GameManager.Instance != null)
@@ -47,6 +52,7 @@ public class ClawHandController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        HandImage = GetComponent<Image>();
         RectTransform = GetComponent<RectTransform>();
         InitialPosition = RectTransform.anchoredPosition;
 
@@ -128,6 +134,8 @@ public class ClawHandController : MonoBehaviour
         {
             // If no ingredient was found, then reset the hand.
             CurrentState = HandState.Resetting;
+
+            HandImage.sprite = PinchedHandSprite;
         }
     }
 
@@ -173,6 +181,8 @@ public class ClawHandController : MonoBehaviour
         // Adjust the local position of the ingredient here.
         ingredient.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, -50);
         CarriedIngredient = ingredient;
+
+        HandImage.sprite = PinchedHandSprite;
 
         // Once ingredient is picked up, proceed to the drop-off point.
         CurrentState = HandState.PickingUp;
@@ -242,6 +252,7 @@ public class ClawHandController : MonoBehaviour
         {
             RectTransform.anchoredPosition = InitialPosition;
             CurrentState = HandState.MovingHorizontally;
+            HandImage.sprite = OpenHandSprite;
             SetButtonState(true);
         }
     }
