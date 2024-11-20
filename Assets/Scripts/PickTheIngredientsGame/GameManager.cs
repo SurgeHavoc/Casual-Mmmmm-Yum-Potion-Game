@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
     public Button MainMenuButton;
 
     public PauseScript pause; // PauseMenu
+    public GameObject failPopUp;
 
     void Awake()
     {
@@ -84,6 +85,7 @@ public class GameManager : MonoBehaviour
                 IsTimerRunning = false;
                 UpdateTimerDisplay();
                 GameOver();
+                failPopUp.SetActive(true); // Fail PopUp
             }
 
             else if (TimeRemaining <= 5)

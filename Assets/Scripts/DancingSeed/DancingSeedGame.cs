@@ -270,7 +270,7 @@ public class DancingSeedGame : MonoBehaviour
                 IsTimerRunning = false;
                 UpdateTimerDisplay();
                 GameOver();
-                failPopUp.SetActive(true);
+                failPopUp.SetActive(true); // Fail PopUp
             }
             else if (TimeRemaining <= 5)
             {

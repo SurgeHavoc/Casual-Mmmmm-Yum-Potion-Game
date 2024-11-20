@@ -787,7 +787,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 278311098204787756}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 905722146635568398}
+        m_TargetAssemblyTypeName: MGScript, Assembly-CSharp
+        m_MethodName: RubThePotion
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1366365808552380173
 GameObject:
   m_ObjectHideFlags: 0
@@ -2112,7 +2124,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4321072555672719632}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 905722146635568398}
+        m_TargetAssemblyTypeName: MGScript, Assembly-CSharp
+        m_MethodName: MP
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3332198516560836019
 GameObject:
   m_ObjectHideFlags: 0
@@ -2234,8 +2258,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
+      - m_Target: {fileID: 905722146635568398}
+        m_TargetAssemblyTypeName: MGScript, Assembly-CSharp
         m_MethodName: PTI
         m_Mode: 1
         m_Arguments:
@@ -2825,7 +2849,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8281051709503049908}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 905722146635568398}
+        m_TargetAssemblyTypeName: MGScript, Assembly-CSharp
+        m_MethodName: HealThePotion
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4401199532190710909
 GameObject:
   m_ObjectHideFlags: 0
@@ -4326,6 +4362,7 @@ GameObject:
   - component: {fileID: 4916033961681442809}
   - component: {fileID: 7863477250014294695}
   - component: {fileID: 8383002950834946344}
+  - component: {fileID: 905722146635568398}
   m_Layer: 5
   m_Name: Mini-Games
   m_TagString: Untagged
@@ -4457,6 +4494,18 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &905722146635568398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6521654489563561784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfb21afabe1150d4087dab3af87f681e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6610309744713166440
 GameObject:
   m_ObjectHideFlags: 0
@@ -5019,7 +5068,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7953420336513770499
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5317,8 +5366,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
+      - m_Target: {fileID: 905722146635568398}
+        m_TargetAssemblyTypeName: MGScript, Assembly-CSharp
         m_MethodName: DancingSeed
         m_Mode: 1
         m_Arguments:
