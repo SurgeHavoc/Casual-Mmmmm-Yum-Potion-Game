@@ -74,6 +74,12 @@ public class DancingSeedGame : MonoBehaviour
     // Game over UI.
     public TextMeshProUGUI GameOverText;
 
+    public AudioSource BackgroundMusicSource;
+
+    public AudioSource CountdownAudioSource;
+    public AudioClip CountdownBeepClip;
+    //public AudioClip CountdownFinalClip; // For "DANCE!" after the numbers.
+
     private void Awake()
     {
         InputActions = new PlayerInputActions();
@@ -112,10 +118,10 @@ public class DancingSeedGame : MonoBehaviour
                 TimeLimit = 20f;
                 break;
             case 4:
-                TimeLimit = 30f;
+                TimeLimit = 25f;
                 break;
             case 5:
-                TimeLimit = 40f;
+                TimeLimit = 30f;
                 break;
         }
 
@@ -162,6 +168,25 @@ public class DancingSeedGame : MonoBehaviour
 
                 // Reset scale to <3, 3, 3>.
                 CountdownText.rectTransform.localScale = new Vector3(3, 3, 3);
+            }
+
+            if (CountdownAudioSource != null)
+            {
+                if (number == "DANCE!")
+                {
+                    // Play DANCE! sound if there is one.
+                    /*if (CountdownFinalClip != null)
+                    {
+                        CountdownAudioSource.PlayOneShot(CountdownFinalClip);
+                    }*/
+                }
+                else
+                {
+                    if (CountdownBeepClip != null && !CountdownAudioSource.isPlaying)
+                    {
+                        CountdownAudioSource.PlayOneShot(CountdownBeepClip);
+                    }
+                }
             }
 
             float EffectDuration= TimePerNumber * 0.99f; // Fade over 99% of the time per number.
@@ -378,6 +403,11 @@ public class DancingSeedGame : MonoBehaviour
         //TimerText.color = Color.white;
         UpdateTimerDisplay();
 
+        if (BackgroundMusicSource != null && !BackgroundMusicSource.isPlaying)
+        {
+            BackgroundMusicSource.Play();
+        }
+
 
         // Input is now enabled.
         IsInputEnabled = true;
@@ -530,6 +560,11 @@ public class DancingSeedGame : MonoBehaviour
         IsInputEnabled = false;
         // Disable the timer.
         IsTimerRunning = false;
+
+        if (BackgroundMusicSource != null && BackgroundMusicSource.isPlaying)
+        {
+            BackgroundMusicSource.Stop();
+        }
 
         if(GameOverText != null)
         {

@@ -222,6 +222,8 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Proceed to the next minigame!");
 
+        GameCompletePanel.SetActive(false);
+
         int CurrentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
         int NextSceneIndex = CurrentSceneIndex + 1;
