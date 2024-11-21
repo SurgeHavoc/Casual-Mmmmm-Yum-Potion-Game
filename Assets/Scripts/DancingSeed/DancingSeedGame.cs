@@ -572,7 +572,7 @@ public class DancingSeedGame : MonoBehaviour
             GameOverText.text = "GAME OVER!";
         }
 
-        Invoke("RestartGame", 3f);
+        //Invoke("RestartGame", 3f);
     }
 
     void RestartGame()

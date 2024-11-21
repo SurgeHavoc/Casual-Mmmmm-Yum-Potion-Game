@@ -160,14 +160,14 @@ public class GameManager : MonoBehaviour
         }
 
         // On game over, enable game over buttons.
-        RestartButton.gameObject.SetActive(true);
-        MainMenuButton.gameObject.SetActive(true);
+        //RestartButton.gameObject.SetActive(true);
+        //MainMenuButton.gameObject.SetActive(true);
 
-        RestartButton.onClick.RemoveAllListeners();
-        MainMenuButton.onClick.RemoveAllListeners();
+        //RestartButton.onClick.RemoveAllListeners();
+        //MainMenuButton.onClick.RemoveAllListeners();
 
-        RestartButton.onClick.AddListener(RestartGame);
-        MainMenuButton.onClick.AddListener(ReturnToMainMenu);
+        //RestartButton.onClick.AddListener(RestartGame);
+        //MainMenuButton.onClick.AddListener(ReturnToMainMenu);
     }
 
     public void RestartGame()
