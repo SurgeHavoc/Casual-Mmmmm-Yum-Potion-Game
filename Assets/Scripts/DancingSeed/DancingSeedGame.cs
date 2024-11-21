@@ -308,7 +308,7 @@ public class DancingSeedGame : MonoBehaviour
         if (!IsInputEnabled)
             return;
 
-        //ChangeSeedPose(ColorName);
+        ChangeSeedPose(DirectionName);
 
         CheckInput(DirectionName);
     }
@@ -331,7 +331,7 @@ public class DancingSeedGame : MonoBehaviour
                 break;
             case "Up":
                 float chance = Random.Range(0f, 1f);
-                if (chance < 0.3f)
+                if (chance < 0.2f)
                 {
                     NewSprite = UpStinkyPoseSprite;
                     Debug.Log("UpStinkyPoseSprite selected with chance: " + chance);
