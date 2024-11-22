@@ -19,10 +19,10 @@ public class ClawHandController : MonoBehaviour
     public float MoveSpeed = 250f; // Speed of hand horizontally in pixels per second.
     public float LeftBoundary = -396f;
     public float RightBoundary = 396f;
-    public float DownSpeed = 150f; // Speed of hand moving down in pixels per second.
+    public float DownSpeed = 250f; // Speed of hand moving down in pixels per second.
     public float DownBoundary = -245f;
-    public float ResetSpeed = 200f;
-    public float MoveToDropOffSpeed = 200f;
+    public float ResetSpeed = 300f;
+    public float MoveToDropOffSpeed = 300f;
 
     private RectTransform RectTransform;
     private Vector2 InitialPosition;

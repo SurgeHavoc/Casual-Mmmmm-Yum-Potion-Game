@@ -4,34 +4,56 @@ public class MortarIngredient : MonoBehaviour
 {
     public string IngredientName;
     [HideInInspector] public Vector3 OriginalPosition;
+    private Camera MainCamera;
 
     private bool IsDragging = false;
-    private Camera MainCamera;
+    private bool IsClone = false;
+    private GameObject OriginalIngredient;
+
+    private Mortar mortar;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         MainCamera = Camera.main;
         OriginalPosition = transform.position;
+
+        mortar = FindFirstObjectByType<Mortar>();
     }
 
     private void OnMouseDown()
     {
-        IsDragging = true;
+        if (mortar.IsIngredientDraggable)
+        {
+            if (!IsClone)
+            {
+                GameObject clone = Instantiate(gameObject, OriginalPosition, Quaternion.identity);
+                clone.GetComponent<MortarIngredient>().IsClone = false;
+
+                IsClone = true;
+                OriginalIngredient = clone;
+            }
+            IsDragging = true;
+        }
     }
 
     private void OnMouseUp()
     {
         IsDragging = false;
 
+        if (mortar.IsIngredientDraggable)
+        {
+            Destroy(gameObject);
+        }
+
         // If mouse up, ingredient resets position.
-        transform.position = OriginalPosition;
+        //transform.position = OriginalPosition;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (IsDragging)
+        if (IsDragging && mortar.IsIngredientDraggable)
         {
             Vector3 MousePosition = Input.mousePosition;
             MousePosition.z = Mathf.Abs(MainCamera.transform.position.z);
@@ -39,21 +61,15 @@ public class MortarIngredient : MonoBehaviour
         }
     }
 
-    private bool IsInsideMortar = false;
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Mortar"))
         {
-            IsInsideMortar = true;
-        }
-    }
+            IsDragging = false;
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Mortar"))
-        {
-            IsInsideMortar = false;
+            //mortar.IngredientAttempted(this);
+
+            Destroy(gameObject);
         }
     }
 }

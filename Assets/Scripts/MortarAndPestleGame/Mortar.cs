@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using TMPro;
 
 public class Mortar : MonoBehaviour
 {
@@ -14,15 +15,65 @@ public class Mortar : MonoBehaviour
     private bool IsPestleDraggable = false;
     private Vector3 PestleOriginalPosition;
 
+    public bool IsIngredientDraggable = true;
+
+    private int TotalRounds;
+    private int CurrentRound = 0;
+
+    public float TimeLimit = 60f;
+    private float TimeRemaining;
+    public TextMeshProUGUI TimerText;
+    private bool IsTimerRunning = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Start()
     {
         PestleOriginalPosition = pestle.transform.position;
+
+        TotalRounds = Random.Range(3, 6);
+
+        switch (TotalRounds)
+        {
+            case 3:
+                TimeLimit = 60f;
+                break;
+            case 4:
+                TimeLimit = 70f;
+                break;
+            case 5:
+                TimeLimit = 80f;
+                break;
+        }
+
+        TimeRemaining = TimeLimit;
+        UpdateTimerDisplay();
+        IsTimerRunning = true;
 
         InitializeColors();
         GenerateRandomSequence();
 
         SetPestleDraggable(false);
+    }
+
+    private void Update()
+    {
+        if (IsTimerRunning)
+        {
+            TimeRemaining -= Time.deltaTime;
+            UpdateTimerDisplay();
+
+            if (TimeRemaining <= 0)
+            {
+                TimeRemaining = 0;
+                IsTimerRunning = false;
+                UpdateTimerDisplay();
+                GameOver();
+            }
+            else if (TimeRemaining <= 5)
+            {
+                BlinkTimer();
+            }
+        }
     }
 
     // Temporary way of matching ingredients to a sequence.
@@ -98,7 +149,19 @@ public class Mortar : MonoBehaviour
             if (PestleCrushCount >= 5)
             {
                 Debug.Log("5 ingredients crushed! Generating new sequence.");
-                GenerateRandomSequence();
+
+                CurrentRound++;
+
+                if (CurrentRound >= TotalRounds)
+                {
+                    GameComplete();
+                }
+                else
+                {
+                    GenerateRandomSequence();
+                    SetPestleDraggable(false);
+                    IsIngredientDraggable = true;
+                }
             }
         }
     }
@@ -119,6 +182,7 @@ public class Mortar : MonoBehaviour
         {
             Debug.Log("Sequence matched! Pestle now draggable.");
             SetPestleDraggable(true);
+            IsIngredientDraggable = false;
         }
         else
         {
@@ -141,5 +205,42 @@ public class Mortar : MonoBehaviour
     private void ResetPestlePosition()
     {
         pestle.transform.position = PestleOriginalPosition;
+    }
+
+    private void GameComplete()
+    {
+        Debug.Log("Game Complete!");
+        IsTimerRunning = false;
+        IsIngredientDraggable = false;
+        SetPestleDraggable(false);
+        // Display Game Complete UI.
+    }
+
+    private void GameOver()
+    {
+        Debug.Log("Game Over!");
+        IsIngredientDraggable = false;
+        SetPestleDraggable(false);
+        // Display Game Over UI.
+    }
+
+    void UpdateTimerDisplay()
+    {
+        if (TimerText != null)
+        {
+            int minutes = Mathf.FloorToInt(TimeRemaining / 60f);
+            int seconds = Mathf.FloorToInt(TimeRemaining % 60f);
+            int milliseconds = Mathf.FloorToInt((TimeRemaining * 1000f) % 1000f);
+
+            TimerText.text = string.Format("{0:00}:{1:00}:{2:000}", minutes, seconds, milliseconds);
+        }
+    }
+
+    void BlinkTimer()
+    {
+        if (TimerText != null)
+        {
+            TimerText.color = Color.Lerp(Color.white, Color.red, Mathf.PingPong(Time.time * 2, 1));
+        }
     }
 }
