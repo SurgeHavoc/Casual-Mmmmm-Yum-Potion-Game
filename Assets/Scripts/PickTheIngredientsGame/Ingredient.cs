@@ -3,12 +3,21 @@ using UnityEngine.UI;
 
 public class Ingredient : MonoBehaviour
 {
-    public Sprite IngredientSprite;
+    private Image IngredientImage;
 
-    private void Start()
+    private void Awake()
     {
-        GetComponent<Image>().sprite = IngredientSprite;
+        IngredientImage = GetComponent<Image>();
     }
+
+    public void SetIngredientSprite(Sprite NewSprite)
+    {
+        if (IngredientImage != null)
+        {
+            IngredientImage.sprite = NewSprite;
+        }
+    }
+
     public void PickUp()
     {
         GameManager.Instance.IngredientCollected();

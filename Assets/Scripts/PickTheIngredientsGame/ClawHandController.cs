@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
@@ -56,14 +57,6 @@ public class ClawHandController : MonoBehaviour
         RectTransform = GetComponent<RectTransform>();
         InitialPosition = RectTransform.anchoredPosition;
 
-        // Get list of ingredient RectTransforms here.
-        IngredientRects = new List<RectTransform>();
-        GameObject[] IngredientObjects = GameObject.FindGameObjectsWithTag("Ingredient");
-        foreach (GameObject ingredient in IngredientObjects)
-        {
-            IngredientRects.Add(ingredient.GetComponent<RectTransform>());
-        }
-
         GrabButton.onClick.AddListener(OnGrabButtonClicked);
         SetButtonState(true);
 
@@ -71,6 +64,26 @@ public class ClawHandController : MonoBehaviour
         InputActions.PickTheIngredientsPlayer.Enable();
 
         InputActions.PickTheIngredientsPlayer.Grab.performed += OnGrabAction;
+
+        StartCoroutine(InitializeIngredients());
+    }
+
+    IEnumerator InitializeIngredients()
+    {
+        yield return new WaitForEndOfFrame();
+
+        RefreshIngredientList();
+    }
+
+    void RefreshIngredientList()
+    {
+        // Get list of ingredient RectTransforms here.
+        IngredientRects = new List<RectTransform>();
+        GameObject[] IngredientObjects = GameObject.FindGameObjectsWithTag("Ingredient");
+        foreach (GameObject ingredient in IngredientObjects)
+        {
+            IngredientRects.Add(ingredient.GetComponent<RectTransform>());
+        }
     }
 
     // Update is called once per frame

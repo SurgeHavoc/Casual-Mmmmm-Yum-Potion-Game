@@ -250,11 +250,13 @@ public class Mortar : MonoBehaviour
     {
         if (TimerText != null)
         {
-            int minutes = Mathf.FloorToInt(TimeRemaining / 60f);
-            int seconds = Mathf.FloorToInt(TimeRemaining % 60f);
-            int milliseconds = Mathf.FloorToInt((TimeRemaining * 1000f) % 1000f);
+            //int minutes = Mathf.FloorToInt(TimeRemaining / 60f);
+            //int seconds = Mathf.FloorToInt(TimeRemaining % 60f);
+            //int milliseconds = Mathf.FloorToInt((TimeRemaining * 1000f) % 1000f);
 
-            TimerText.text = string.Format("{0:00}:{1:00}:{2:000}", minutes, seconds, milliseconds);
+            //TimerText.text = string.Format("{0:00}:{1:00}:{2:000}", minutes, seconds, milliseconds);
+            TimerText.text = "Time: " + Mathf.CeilToInt(TimeRemaining).ToString();
+            TimerText.color = Color.white;
         }
     }
 
