@@ -447,6 +447,12 @@ public class DancingSeedGame : MonoBehaviour
 
         PromptRect.localRotation = Quaternion.Euler(0f, 0f, RotationAngle);
 
+        Vector3 InitialScale = new Vector3(2f, 2f, 2f);
+        Vector3 TargetScale = new Vector3(1f, 1f, 1f);
+        float PromptDuration = 0.5f;
+
+        StartCoroutine(ScaleDownPrompt(prompt, InitialScale, TargetScale, PromptDuration));
+
         // Instantiate the current prompt UI.
         /*string ColorName = CurrentSequence[CurrentInputIndex];
         GameObject prompt = Instantiate(KeyPromptPrefab, KeyPromptPanel);
@@ -455,6 +461,30 @@ public class DancingSeedGame : MonoBehaviour
         {
             PromptImage.color = ColorMap[ColorName];
         }*/
+    }
+
+    IEnumerator ScaleDownPrompt(GameObject prompt, Vector3 InitialScale, Vector3 TargetScale, float PromptDuration)
+    {
+        RectTransform RectTransform = prompt.GetComponent<RectTransform>();
+        float ElapsedTime = 0f;
+
+        while (ElapsedTime < PromptDuration)
+        {
+            if (prompt == null)
+            {
+                yield break;
+            }
+
+            ElapsedTime += Time.deltaTime;
+            float time = ElapsedTime / PromptDuration;
+            RectTransform.localScale = Vector3.Lerp(InitialScale, TargetScale, time);
+            yield return null;
+        }
+
+        if (prompt != null)
+        {
+            RectTransform.localScale = TargetScale;
+        }
     }
 
     void CheckInput(string InputDirection)

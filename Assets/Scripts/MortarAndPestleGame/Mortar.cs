@@ -30,21 +30,9 @@ public class Mortar : MonoBehaviour
     {
         PestleOriginalPosition = pestle.transform.position;
 
-        TotalRounds = Random.Range(3, 6);
+        TotalRounds = 1;
 
-        switch (TotalRounds)
-        {
-            case 3:
-                TimeLimit = 60f;
-                break;
-            case 4:
-                TimeLimit = 70f;
-                break;
-            case 5:
-                TimeLimit = 80f;
-                break;
-        }
-
+        TimeLimit = 45f;
         TimeRemaining = TimeLimit;
         UpdateTimerDisplay();
         IsTimerRunning = true;
