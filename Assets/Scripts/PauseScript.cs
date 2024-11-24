@@ -13,6 +13,8 @@ public class PauseScript : MonoBehaviour
     public GameObject C;
     public GameObject PM;
 
+    public GameObject instruct;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -56,6 +58,13 @@ public class PauseScript : MonoBehaviour
     {
         MG.SetActive(false);
         C.SetActive(true);
+    }
+
+    public void Intructions()
+    {
+        instruct.SetActive(false);
+        Time.timeScale = 1f;
+        GameIsPaused = false;
     }
 
     public void BackToPause()

@@ -800,6 +800,15 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3211478401567962622, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
+      propertyPath: m_text
+      value: Press Space or A  to Pick the Ingredient.  We're in a hurry so make
+        sure  to  time your selection!
+      objectReference: {fileID: 0}
+    - target: {fileID: 3538828339910884104, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7198306776967819132, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
       propertyPath: m_Name
       value: MainMenuBar
@@ -844,11 +853,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8999638242919754680, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Intructions
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
+--- !u!1 &1831472324 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3538828339910884104, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
+  m_PrefabInstance: {fileID: 1831472323}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1831472325 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 691456834523076972, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
+  m_PrefabInstance: {fileID: 1831472323}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1857915749 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4238732068439596980, guid: 14f85f6d1be6e6f41a3b43c69b486663, type: 3}
@@ -870,6 +893,7 @@ MonoBehaviour:
   MG: {fileID: 477374913}
   C: {fileID: 1669721693}
   PM: {fileID: 1408058775}
+  instruct: {fileID: 1831472324}
 --- !u!1 &2140895949 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2193756377235899898, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
@@ -932,6 +956,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1857915750}
     - target: {fileID: 9042046959511529065, guid: 14f85f6d1be6e6f41a3b43c69b486663, type: 3}
+      propertyPath: instruct
+      value: 
+      objectReference: {fileID: 1831472324}
+    - target: {fileID: 9042046959511529065, guid: 14f85f6d1be6e6f41a3b43c69b486663, type: 3}
       propertyPath: TimeLimit
       value: 65
       objectReference: {fileID: 0}
@@ -943,6 +971,10 @@ PrefabInstance:
       propertyPath: failPopUp
       value: 
       objectReference: {fileID: 2140895949}
+    - target: {fileID: 9042046959511529065, guid: 14f85f6d1be6e6f41a3b43c69b486663, type: 3}
+      propertyPath: successPopUp
+      value: 
+      objectReference: {fileID: 1831472325}
     - target: {fileID: 9042046959511529065, guid: 14f85f6d1be6e6f41a3b43c69b486663, type: 3}
       propertyPath: GameOverPanel
       value: 
@@ -1021,7 +1053,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1111537738871935963, guid: 90d23c31d1804704eb42ed5a8eb0c530, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.58000183
+      value: -0.5799866
       objectReference: {fileID: 0}
     - target: {fileID: 1382719209459989035, guid: 90d23c31d1804704eb42ed5a8eb0c530, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1357,7 +1389,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4722804217791531683, guid: 90d23c31d1804704eb42ed5a8eb0c530, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.58000183
+      value: -0.5799866
       objectReference: {fileID: 0}
     - target: {fileID: 5358841651305578630, guid: 90d23c31d1804704eb42ed5a8eb0c530, type: 3}
       propertyPath: m_Sprite
@@ -1370,6 +1402,10 @@ PrefabInstance:
     - target: {fileID: 5358841651305578630, guid: 90d23c31d1804704eb42ed5a8eb0c530, type: 3}
       propertyPath: m_Color.g
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5372358429869457686, guid: 90d23c31d1804704eb42ed5a8eb0c530, type: 3}
+      propertyPath: m_text
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5372358429869457686, guid: 90d23c31d1804704eb42ed5a8eb0c530, type: 3}
       propertyPath: m_fontSize
@@ -1620,7 +1656,8 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7686925698412531807, guid: 90d23c31d1804704eb42ed5a8eb0c530, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90d23c31d1804704eb42ed5a8eb0c530, type: 3}

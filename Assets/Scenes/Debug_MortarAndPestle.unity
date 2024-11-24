@@ -196,6 +196,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &517981411 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3538828339910884104, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
+  m_PrefabInstance: {fileID: 1087009715}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &530948475 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6706107554835368432, guid: 8437d28603701ad43a945682b9dc418f, type: 3}
@@ -220,13 +225,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3211478401567962622, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
+      propertyPath: m_text
+      value: Hold LMB / A to drag and drop the correct ingredient into the mortar.
+        Use the pestle to grind them and be quick about it!
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521654489563561784, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7198306776967819132, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
       propertyPath: m_Name
       value: MainMenuBar
       objectReference: {fileID: 0}
     - target: {fileID: 7198306776967819132, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7560363131600257247, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
       propertyPath: m_LocalPosition.x
@@ -268,11 +282,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8999638242919754680, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Intructions
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
+--- !u!1 &1401440686 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 691456834523076972, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
+  m_PrefabInstance: {fileID: 1087009715}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1421681043
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,6 +433,22 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &1551552614 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4350888457536083509, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
+  m_PrefabInstance: {fileID: 1087009715}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f74485e5846f4a449deb9d138991776, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1654681576 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2193756377235899898, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
+  m_PrefabInstance: {fileID: 1087009715}
+  m_PrefabAsset: {fileID: 0}
 --- !u!212 &1686699471 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 2818165424582332359, guid: ab0ecfb06ca061b4fb4d0f9c12544028, type: 3}
@@ -745,8 +784,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: M&PGameCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7989279222566256992, guid: 9acbd5e47c851ec469a5407540547fa2, type: 3}
+      propertyPath: m_text
+      value: Hold LMB / A to drag and drop the correct ingredient into the mortar.
+        Use the pestle to grind them and be quick about it!
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8556812466219475557, guid: 9acbd5e47c851ec469a5407540547fa2, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9acbd5e47c851ec469a5407540547fa2, type: 3}
@@ -803,13 +848,29 @@ PrefabInstance:
       value: Mortar
       objectReference: {fileID: 0}
     - target: {fileID: 9192030477921449943, guid: 1b07b9b61961d9547ae6c4ef31afcacc, type: 3}
+      propertyPath: pause
+      value: 
+      objectReference: {fileID: 1551552614}
+    - target: {fileID: 9192030477921449943, guid: 1b07b9b61961d9547ae6c4ef31afcacc, type: 3}
       propertyPath: pestle
       value: 
       objectReference: {fileID: 530948475}
     - target: {fileID: 9192030477921449943, guid: 1b07b9b61961d9547ae6c4ef31afcacc, type: 3}
+      propertyPath: instruct
+      value: 
+      objectReference: {fileID: 517981411}
+    - target: {fileID: 9192030477921449943, guid: 1b07b9b61961d9547ae6c4ef31afcacc, type: 3}
       propertyPath: TimerText
       value: 
       objectReference: {fileID: 725741571}
+    - target: {fileID: 9192030477921449943, guid: 1b07b9b61961d9547ae6c4ef31afcacc, type: 3}
+      propertyPath: failPopUp
+      value: 
+      objectReference: {fileID: 1654681576}
+    - target: {fileID: 9192030477921449943, guid: 1b07b9b61961d9547ae6c4ef31afcacc, type: 3}
+      propertyPath: successPopUp
+      value: 
+      objectReference: {fileID: 1401440686}
     - target: {fileID: 9192030477921449943, guid: 1b07b9b61961d9547ae6c4ef31afcacc, type: 3}
       propertyPath: 'SequenceDisplay.Array.data[0]'
       value: 

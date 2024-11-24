@@ -29,6 +29,8 @@ public class GameManager : MonoBehaviour
 
     public PauseScript pause; // PauseMenu
     public GameObject failPopUp;
+    public GameObject instruct; // hi
+    public GameObject successPopUp;
 
     void Awake()
     {
@@ -48,6 +50,8 @@ public class GameManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+         Intro();
+
         // Get total ingredients at the start.
         TotalIngredients = GameObject.FindGameObjectsWithTag("Ingredient").Length;
 
@@ -96,14 +100,22 @@ public class GameManager : MonoBehaviour
         }
 
         // Hey Antonio this was the only way I could get the pause menu to work pls don't delete -Asha
-         if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.JoystickButton7)) 
+        if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.JoystickButton7)) 
         {
             if(!pause.GameIsPaused)
-                    pause.Paused();
-                else
-                    pause.Resume();
+                pause.Paused();
+            else
+                pause.Resume();
         }
     }
+
+    public void Intro() // coding for Instructions popup
+    {
+        instruct.SetActive(true);
+        pause.GameIsPaused = true;
+        IsTimerRunning = false;
+        Time.timeScale = 0;
+    } 
 
     void UpdateTimerDisplay()
     {
@@ -133,6 +145,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("All ingredients collected! Minigame complete!");
             GameComplete();
+            successPopUp.SetActive(true);
         }
     }
 

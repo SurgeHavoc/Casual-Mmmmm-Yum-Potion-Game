@@ -19,7 +19,7 @@ public class MGScript : MonoBehaviour
         // SceneManager.LoadScene();
     }
 
-    public void HealThePotion()
+    public void HeatThePotion()
     {
         // SceneManager.LoadScene();
     }

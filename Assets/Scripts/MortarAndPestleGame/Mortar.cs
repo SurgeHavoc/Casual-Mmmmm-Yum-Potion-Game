@@ -25,10 +25,18 @@ public class Mortar : MonoBehaviour
     public TextMeshProUGUI TimerText;
     private bool IsTimerRunning = false;
 
+    // UI added by Asha
+    public PauseScript pause; // PauseMenu
+    public GameObject failPopUp;
+    public GameObject instruct; // hi
+    public GameObject successPopUp;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
         PestleOriginalPosition = pestle.transform.position;
+        Intro();
 
         TotalRounds = 1;
 
@@ -41,6 +49,9 @@ public class Mortar : MonoBehaviour
         GenerateRandomSequence();
 
         SetPestleDraggable(false);
+
+        // Allows the Pause Menu to function -Asha
+        pause = GetComponent<PauseScript>();
     }
 
     private void Update()
@@ -56,13 +67,32 @@ public class Mortar : MonoBehaviour
                 IsTimerRunning = false;
                 UpdateTimerDisplay();
                 GameOver();
+                failPopUp.SetActive(true);
+                IsTimerRunning = false;
             }
             else if (TimeRemaining <= 5)
             {
                 BlinkTimer();
             }
         }
+
+        // Hey Antonio this was the only way I could get the pause menu to work pls don't delete -Asha
+        if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.JoystickButton7)) 
+        {
+            if(!pause.GameIsPaused)
+                pause.Paused();
+            else
+                pause.Resume();
+        }
     }
+
+    public void Intro() // coding for Instructions popup
+    {
+        instruct.SetActive(true);
+        pause.GameIsPaused = true;
+        IsTimerRunning = false;
+        Time.timeScale = 0;
+    } 
 
     // Temporary way of matching ingredients to a sequence.
     private void InitializeColors()
@@ -143,6 +173,7 @@ public class Mortar : MonoBehaviour
                 if (CurrentRound >= TotalRounds)
                 {
                     GameComplete();
+                    successPopUp.SetActive(true);
                 }
                 else
                 {
@@ -175,10 +206,13 @@ public class Mortar : MonoBehaviour
         else
         {
             Debug.Log("Sequence did not match. Try again.");
+            failPopUp.SetActive(true);
+            IsTimerRunning = false;
         }
 
         DraggedIngredients.Clear();
     }
+
 
     private void SetPestleDraggable(bool CanDrag)
     {

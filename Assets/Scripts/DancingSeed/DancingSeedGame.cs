@@ -25,6 +25,8 @@ public class DancingSeedGame : MonoBehaviour
 
     public PauseScript pause; // PauseMenu
     public GameObject failPopUp;
+    public GameObject instruct; // hi
+    public GameObject successPopUp;
 
     //private List<string> colors = new List<string> { "Red", "Blue", "Green", "Yellow" };
     private List<string> directions = new List<string> { "Up", "Down", "Left", "Right" };
@@ -96,6 +98,7 @@ public class DancingSeedGame : MonoBehaviour
 
         // Allows the Pause Menu to function -Asha
         pause = GetComponent<PauseScript>();
+
     }
 
     private void OnEnable()
@@ -124,16 +127,18 @@ public class DancingSeedGame : MonoBehaviour
                 TimeLimit = 30f;
                 break;
         }
+        
+        Intro();
 
         // Initialize the timer here.
         TimeRemaining = TimeLimit;
         UpdateTimerDisplay();
 
         // Begin the countdown on game start here.
-        StartCountdown();
+        StartCountdown(); 
     }
 
-    void StartCountdown()
+    public void StartCountdown()
     {
         StartCoroutine(CountdownCoroutine());
     }
@@ -301,6 +306,15 @@ public class DancingSeedGame : MonoBehaviour
             }
         }
     }
+
+    public void Intro() // coding for Instructions popup
+    {
+        
+        instruct.SetActive(true);
+        pause.GameIsPaused = true;
+        IsTimerRunning = true;
+        Time.timeScale = 0;
+    } 
 
     private void OnMove(string DirectionName)
     {
@@ -505,6 +519,7 @@ public class DancingSeedGame : MonoBehaviour
                 if(CurrentRound >= TotalRounds)
                 {
                     CompleteGame();
+                    successPopUp.SetActive(true);
                 }
                 else
                 {
@@ -520,6 +535,7 @@ public class DancingSeedGame : MonoBehaviour
         {
             // On incorrect input.
             Debug.Log("Incorrect input. Try again.");
+            completeFail(); // triggers fail Pop Up if wrong key pushed.
 
             // On incorrect input, change the player color to indicate an error, oh noes!
             //PlayerRenderer.color = Color.black;
@@ -528,6 +544,15 @@ public class DancingSeedGame : MonoBehaviour
             // Restart the round after a delay.
             Invoke("StartRound", 1f);
         }
+    }
+
+    public void completeFail()
+    {
+        failPopUp.SetActive(true);
+        pause.GameIsPaused = true;
+        Time.timeScale = 0;
+        // Pause the timer here.
+        IsTimerRunning = true;
     }
 
     void RoundCompleted()
