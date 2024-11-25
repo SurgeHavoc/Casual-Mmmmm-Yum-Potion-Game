@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     public float TimeLimit = 25f;
     private float TimeRemaining;
     public TextMeshProUGUI TimerText;
-    private bool IsTimerRunning = false;
+    public bool IsTimerRunning = false;
 
     public GameObject GameOverPanel;
     public GameObject GameCompletePanel;
@@ -66,7 +66,9 @@ public class GameManager : MonoBehaviour
         TimeRemaining = TimeLimit;
         UpdateTimerDisplay();
 
-        IsTimerRunning = true;
+        
+        // IsTimerRunning = true;
+        
 
         if (GameOverPanel != null)
         {
@@ -87,6 +89,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (IsGameOver)
             return;
 
@@ -131,6 +134,7 @@ public class GameManager : MonoBehaviour
 
     void UpdateTimerDisplay()
     {
+
         if (TimerText != null)
         {
             //int minutes = Mathf.FloorToInt(TimeRemaining / 60f);

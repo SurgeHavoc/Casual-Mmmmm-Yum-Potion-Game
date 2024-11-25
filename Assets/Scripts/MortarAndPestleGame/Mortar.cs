@@ -36,6 +36,7 @@ public class Mortar : MonoBehaviour
     private void Start()
     {
         PestleOriginalPosition = pestle.transform.position;
+
         Intro();
 
         TotalRounds = 1;
@@ -90,8 +91,8 @@ public class Mortar : MonoBehaviour
     {
         instruct.SetActive(true);
         pause.GameIsPaused = true;
-        IsTimerRunning = false;
-        Time.timeScale = 0;
+        IsTimerRunning = true;
+        Time.timeScale = 0f;
     } 
 
     // Temporary way of matching ingredients to a sequence.
