@@ -67,7 +67,7 @@ public class GameManager : MonoBehaviour
         UpdateTimerDisplay();
 
         
-        // IsTimerRunning = true;
+        IsTimerRunning = true;
         
 
         if (GameOverPanel != null)
