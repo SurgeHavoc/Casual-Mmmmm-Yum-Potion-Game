@@ -194,6 +194,76 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""HeatThePotionPlayer"",
+            ""id"": ""f1b68cd4-3435-4f9d-8f35-a5764bba4142"",
+            ""actions"": [
+                {
+                    ""name"": ""RotateLeft"",
+                    ""type"": ""Button"",
+                    ""id"": ""42a73b7d-d58a-4a95-9321-3c8fea8e715d"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RotateRight"",
+                    ""type"": ""Button"",
+                    ""id"": ""7fe75bb1-ff58-4acf-9e11-6d0a5a1d3545"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""618e0193-64d3-4248-9d49-5b29807e8caa"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RotateLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a4a362e1-b291-40f9-a76d-974ebe4df4e4"",
+                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RotateLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""64217443-f3ce-432a-813b-5fababe333c7"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RotateRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7fc183dd-a5c2-4414-8854-6937a0e68baf"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RotateRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -207,12 +277,17 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         // PickTheIngredientsPlayer
         m_PickTheIngredientsPlayer = asset.FindActionMap("PickTheIngredientsPlayer", throwIfNotFound: true);
         m_PickTheIngredientsPlayer_Grab = m_PickTheIngredientsPlayer.FindAction("Grab", throwIfNotFound: true);
+        // HeatThePotionPlayer
+        m_HeatThePotionPlayer = asset.FindActionMap("HeatThePotionPlayer", throwIfNotFound: true);
+        m_HeatThePotionPlayer_RotateLeft = m_HeatThePotionPlayer.FindAction("RotateLeft", throwIfNotFound: true);
+        m_HeatThePotionPlayer_RotateRight = m_HeatThePotionPlayer.FindAction("RotateRight", throwIfNotFound: true);
     }
 
     ~@PlayerInputActions()
     {
         Debug.Assert(!m_DancingSeedPlayer.enabled, "This will cause a leak and performance issues, PlayerInputActions.DancingSeedPlayer.Disable() has not been called.");
         Debug.Assert(!m_PickTheIngredientsPlayer.enabled, "This will cause a leak and performance issues, PlayerInputActions.PickTheIngredientsPlayer.Disable() has not been called.");
+        Debug.Assert(!m_HeatThePotionPlayer.enabled, "This will cause a leak and performance issues, PlayerInputActions.HeatThePotionPlayer.Disable() has not been called.");
     }
 
     public void Dispose()
@@ -386,6 +461,60 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         }
     }
     public PickTheIngredientsPlayerActions @PickTheIngredientsPlayer => new PickTheIngredientsPlayerActions(this);
+
+    // HeatThePotionPlayer
+    private readonly InputActionMap m_HeatThePotionPlayer;
+    private List<IHeatThePotionPlayerActions> m_HeatThePotionPlayerActionsCallbackInterfaces = new List<IHeatThePotionPlayerActions>();
+    private readonly InputAction m_HeatThePotionPlayer_RotateLeft;
+    private readonly InputAction m_HeatThePotionPlayer_RotateRight;
+    public struct HeatThePotionPlayerActions
+    {
+        private @PlayerInputActions m_Wrapper;
+        public HeatThePotionPlayerActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @RotateLeft => m_Wrapper.m_HeatThePotionPlayer_RotateLeft;
+        public InputAction @RotateRight => m_Wrapper.m_HeatThePotionPlayer_RotateRight;
+        public InputActionMap Get() { return m_Wrapper.m_HeatThePotionPlayer; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(HeatThePotionPlayerActions set) { return set.Get(); }
+        public void AddCallbacks(IHeatThePotionPlayerActions instance)
+        {
+            if (instance == null || m_Wrapper.m_HeatThePotionPlayerActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_HeatThePotionPlayerActionsCallbackInterfaces.Add(instance);
+            @RotateLeft.started += instance.OnRotateLeft;
+            @RotateLeft.performed += instance.OnRotateLeft;
+            @RotateLeft.canceled += instance.OnRotateLeft;
+            @RotateRight.started += instance.OnRotateRight;
+            @RotateRight.performed += instance.OnRotateRight;
+            @RotateRight.canceled += instance.OnRotateRight;
+        }
+
+        private void UnregisterCallbacks(IHeatThePotionPlayerActions instance)
+        {
+            @RotateLeft.started -= instance.OnRotateLeft;
+            @RotateLeft.performed -= instance.OnRotateLeft;
+            @RotateLeft.canceled -= instance.OnRotateLeft;
+            @RotateRight.started -= instance.OnRotateRight;
+            @RotateRight.performed -= instance.OnRotateRight;
+            @RotateRight.canceled -= instance.OnRotateRight;
+        }
+
+        public void RemoveCallbacks(IHeatThePotionPlayerActions instance)
+        {
+            if (m_Wrapper.m_HeatThePotionPlayerActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IHeatThePotionPlayerActions instance)
+        {
+            foreach (var item in m_Wrapper.m_HeatThePotionPlayerActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_HeatThePotionPlayerActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public HeatThePotionPlayerActions @HeatThePotionPlayer => new HeatThePotionPlayerActions(this);
     public interface IDancingSeedPlayerActions
     {
         void OnMoveUp(InputAction.CallbackContext context);
@@ -396,5 +525,10 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     public interface IPickTheIngredientsPlayerActions
     {
         void OnGrab(InputAction.CallbackContext context);
+    }
+    public interface IHeatThePotionPlayerActions
+    {
+        void OnRotateLeft(InputAction.CallbackContext context);
+        void OnRotateRight(InputAction.CallbackContext context);
     }
 }
