@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 69
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -147,7 +147,403 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: bottleBasicAnim_0
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 1557
+        width: 257
+        height: 385
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9fe46781c672c545865e33288366c3e
+      internalID: -1193652542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bottleBasicAnim_1
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 1556
+        width: 257
+        height: 385
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71f18badaef2f4a44a82bd9197c2b5fd
+      internalID: 1570505644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bottleBasicAnim_2
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 1557
+        width: 257
+        height: 385
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 172fb7e6dd87653459a183205a816945
+      internalID: -518431404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bottleBasicAnim_3
+      rect:
+        serializedVersion: 2
+        x: 1285
+        y: 1557
+        width: 257
+        height: 385
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b6da4ed85836ae46b0fc03b3d680202
+      internalID: 1810697825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bottleBasicAnim_4
+      rect:
+        serializedVersion: 2
+        x: 1642
+        y: 1557
+        width: 257
+        height: 385
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2932a72e3b59a040a65a86f5c8b252b
+      internalID: 117864448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bottleBasicAnim_5
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 1024
+        width: 257
+        height: 385
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65717332997ff42429ce51a342c756bf
+      internalID: 2022910161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bottleBasicAnim_6
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 1024
+        width: 257
+        height: 385
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ad789b61df7e8e4c91ca8637a8bbd25
+      internalID: -2030390672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bottleBasicAnim_7
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 1023
+        width: 257
+        height: 385
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05d3ef91b95d0894ba7c685a03517fb2
+      internalID: -1934470428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bottleBasicAnim_8
+      rect:
+        serializedVersion: 2
+        x: 1285
+        y: 1022
+        width: 257
+        height: 385
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92e8cab42a623584e861d28fed4073b9
+      internalID: -533362849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bottleBasicAnim_9
+      rect:
+        serializedVersion: 2
+        x: 1642
+        y: 1024
+        width: 257
+        height: 385
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d275bcf6da2ac5345b350be0ab5241b6
+      internalID: 1321431575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bottleBasicAnim_10
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 497
+        width: 257
+        height: 385
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b523bf487c1f024083cfcff07a8f91f
+      internalID: -1285926088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bottleBasicAnim_11
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 497
+        width: 257
+        height: 385
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5698185c2461004f8b75181eb914704
+      internalID: -1413715400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bottleBasicAnim_12
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 497
+        width: 257
+        height: 385
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c228ed8c527333b4583137f33e21876a
+      internalID: 983021987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bottleBasicAnim_13
+      rect:
+        serializedVersion: 2
+        x: 1285
+        y: 496
+        width: 257
+        height: 385
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 122f6606fbe7634478942cc997b87d40
+      internalID: 1132897520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bottleBasicAnim_14
+      rect:
+        serializedVersion: 2
+        x: 1642
+        y: 496
+        width: 257
+        height: 385
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b03702507e7ade44a7336ae84a5b2a0
+      internalID: -2086652643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bottleBasicAnim_15
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 32
+        width: 257
+        height: 385
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5d4dc98bf45ced4887d3bb9b189d17c
+      internalID: -909106895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bottleBasicAnim_16
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 32
+        width: 257
+        height: 385
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92be4e54426293d4592c62a4492520c3
+      internalID: -1092850340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bottleBasicAnim_17
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 31
+        width: 257
+        height: 385
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cde4edceda4b6cd40a5d9dbf2eb2ad82
+      internalID: -2101147221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -161,7 +557,25 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bottleBasicAnim_0: -1193652542
+      bottleBasicAnim_1: 1570505644
+      bottleBasicAnim_10: -1285926088
+      bottleBasicAnim_11: -1413715400
+      bottleBasicAnim_12: 983021987
+      bottleBasicAnim_13: 1132897520
+      bottleBasicAnim_14: -2086652643
+      bottleBasicAnim_15: -909106895
+      bottleBasicAnim_16: -1092850340
+      bottleBasicAnim_17: -2101147221
+      bottleBasicAnim_2: -518431404
+      bottleBasicAnim_3: 1810697825
+      bottleBasicAnim_4: 117864448
+      bottleBasicAnim_5: 2022910161
+      bottleBasicAnim_6: -2030390672
+      bottleBasicAnim_7: -1934470428
+      bottleBasicAnim_8: -533362849
+      bottleBasicAnim_9: 1321431575
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

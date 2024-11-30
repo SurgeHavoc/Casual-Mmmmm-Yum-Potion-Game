@@ -241,6 +241,76 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "RubThePotionPlayer",
+            "id": "082a75ed-82f8-4a8a-b2ae-e1792fb5c759",
+            "actions": [
+                {
+                    "name": "RubLeft",
+                    "type": "Button",
+                    "id": "c6685348-2506-4595-9d64-86b606d936fa",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RubRight",
+                    "type": "Button",
+                    "id": "ff801d03-0efd-4fb5-a24d-290241f7dd7c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "178d49c7-0d93-4912-bbbc-a3ce0b8c6403",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RubLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d7167ec3-f88c-40c6-a8b6-a3f90b787972",
+                    "path": "<Gamepad>/dpad/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RubLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ae04f9f7-dbe6-4e17-84ac-1686901e1261",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RubRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8d991b90-a90c-42e5-8594-6804a3ba4e86",
+                    "path": "<Gamepad>/dpad/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RubRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

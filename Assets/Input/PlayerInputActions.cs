@@ -264,6 +264,76 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""RubThePotionPlayer"",
+            ""id"": ""082a75ed-82f8-4a8a-b2ae-e1792fb5c759"",
+            ""actions"": [
+                {
+                    ""name"": ""RubLeft"",
+                    ""type"": ""Button"",
+                    ""id"": ""c6685348-2506-4595-9d64-86b606d936fa"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RubRight"",
+                    ""type"": ""Button"",
+                    ""id"": ""ff801d03-0efd-4fb5-a24d-290241f7dd7c"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""178d49c7-0d93-4912-bbbc-a3ce0b8c6403"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RubLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d7167ec3-f88c-40c6-a8b6-a3f90b787972"",
+                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RubLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ae04f9f7-dbe6-4e17-84ac-1686901e1261"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RubRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8d991b90-a90c-42e5-8594-6804a3ba4e86"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RubRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -281,6 +351,10 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_HeatThePotionPlayer = asset.FindActionMap("HeatThePotionPlayer", throwIfNotFound: true);
         m_HeatThePotionPlayer_RotateLeft = m_HeatThePotionPlayer.FindAction("RotateLeft", throwIfNotFound: true);
         m_HeatThePotionPlayer_RotateRight = m_HeatThePotionPlayer.FindAction("RotateRight", throwIfNotFound: true);
+        // RubThePotionPlayer
+        m_RubThePotionPlayer = asset.FindActionMap("RubThePotionPlayer", throwIfNotFound: true);
+        m_RubThePotionPlayer_RubLeft = m_RubThePotionPlayer.FindAction("RubLeft", throwIfNotFound: true);
+        m_RubThePotionPlayer_RubRight = m_RubThePotionPlayer.FindAction("RubRight", throwIfNotFound: true);
     }
 
     ~@PlayerInputActions()
@@ -288,6 +362,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         Debug.Assert(!m_DancingSeedPlayer.enabled, "This will cause a leak and performance issues, PlayerInputActions.DancingSeedPlayer.Disable() has not been called.");
         Debug.Assert(!m_PickTheIngredientsPlayer.enabled, "This will cause a leak and performance issues, PlayerInputActions.PickTheIngredientsPlayer.Disable() has not been called.");
         Debug.Assert(!m_HeatThePotionPlayer.enabled, "This will cause a leak and performance issues, PlayerInputActions.HeatThePotionPlayer.Disable() has not been called.");
+        Debug.Assert(!m_RubThePotionPlayer.enabled, "This will cause a leak and performance issues, PlayerInputActions.RubThePotionPlayer.Disable() has not been called.");
     }
 
     public void Dispose()
@@ -515,6 +590,60 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         }
     }
     public HeatThePotionPlayerActions @HeatThePotionPlayer => new HeatThePotionPlayerActions(this);
+
+    // RubThePotionPlayer
+    private readonly InputActionMap m_RubThePotionPlayer;
+    private List<IRubThePotionPlayerActions> m_RubThePotionPlayerActionsCallbackInterfaces = new List<IRubThePotionPlayerActions>();
+    private readonly InputAction m_RubThePotionPlayer_RubLeft;
+    private readonly InputAction m_RubThePotionPlayer_RubRight;
+    public struct RubThePotionPlayerActions
+    {
+        private @PlayerInputActions m_Wrapper;
+        public RubThePotionPlayerActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @RubLeft => m_Wrapper.m_RubThePotionPlayer_RubLeft;
+        public InputAction @RubRight => m_Wrapper.m_RubThePotionPlayer_RubRight;
+        public InputActionMap Get() { return m_Wrapper.m_RubThePotionPlayer; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(RubThePotionPlayerActions set) { return set.Get(); }
+        public void AddCallbacks(IRubThePotionPlayerActions instance)
+        {
+            if (instance == null || m_Wrapper.m_RubThePotionPlayerActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_RubThePotionPlayerActionsCallbackInterfaces.Add(instance);
+            @RubLeft.started += instance.OnRubLeft;
+            @RubLeft.performed += instance.OnRubLeft;
+            @RubLeft.canceled += instance.OnRubLeft;
+            @RubRight.started += instance.OnRubRight;
+            @RubRight.performed += instance.OnRubRight;
+            @RubRight.canceled += instance.OnRubRight;
+        }
+
+        private void UnregisterCallbacks(IRubThePotionPlayerActions instance)
+        {
+            @RubLeft.started -= instance.OnRubLeft;
+            @RubLeft.performed -= instance.OnRubLeft;
+            @RubLeft.canceled -= instance.OnRubLeft;
+            @RubRight.started -= instance.OnRubRight;
+            @RubRight.performed -= instance.OnRubRight;
+            @RubRight.canceled -= instance.OnRubRight;
+        }
+
+        public void RemoveCallbacks(IRubThePotionPlayerActions instance)
+        {
+            if (m_Wrapper.m_RubThePotionPlayerActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IRubThePotionPlayerActions instance)
+        {
+            foreach (var item in m_Wrapper.m_RubThePotionPlayerActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_RubThePotionPlayerActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public RubThePotionPlayerActions @RubThePotionPlayer => new RubThePotionPlayerActions(this);
     public interface IDancingSeedPlayerActions
     {
         void OnMoveUp(InputAction.CallbackContext context);
@@ -530,5 +659,10 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     {
         void OnRotateLeft(InputAction.CallbackContext context);
         void OnRotateRight(InputAction.CallbackContext context);
+    }
+    public interface IRubThePotionPlayerActions
+    {
+        void OnRubLeft(InputAction.CallbackContext context);
+        void OnRubRight(InputAction.CallbackContext context);
     }
 }
