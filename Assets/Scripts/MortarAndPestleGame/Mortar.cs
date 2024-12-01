@@ -33,7 +33,7 @@ public class Mortar : MonoBehaviour
     public float TimeLimit = 60f;
     private float TimeRemaining;
     public TextMeshProUGUI TimerText;
-    private bool IsTimerRunning = false;
+    public bool IsTimerRunning = false;
 
     // UI added by Asha
     public PauseScript pause; // PauseMenu
@@ -56,7 +56,7 @@ public class Mortar : MonoBehaviour
         TimeLimit = 45f;
         TimeRemaining = TimeLimit;
         UpdateTimerDisplay();
-        IsTimerRunning = true;
+        //IsTimerRunning = true;
 
         InitializeIngredientSprites();
         GenerateRandomSequence();
@@ -80,7 +80,6 @@ public class Mortar : MonoBehaviour
                 IsTimerRunning = false;
                 UpdateTimerDisplay();
                 GameOver();
-                failPopUp.SetActive(true);
                 IsTimerRunning = false;
             }
             else if (TimeRemaining <= 5)
@@ -103,7 +102,7 @@ public class Mortar : MonoBehaviour
     {
         instruct.SetActive(true);
         pause.GameIsPaused = true;
-        IsTimerRunning = true;
+        IsTimerRunning = false;
         Time.timeScale = 0f;
     } 
 
@@ -186,7 +185,6 @@ public class Mortar : MonoBehaviour
                 if (CurrentRound >= TotalRounds)
                 {
                     GameComplete();
-                    successPopUp.SetActive(true);
                 }
                 else
                 {
@@ -221,6 +219,7 @@ public class Mortar : MonoBehaviour
             Debug.Log("Sequence did not match. Try again.");
             failPopUp.SetActive(true);
             IsTimerRunning = false;
+            failPopUp.SetActive(true);
         }
 
         DraggedIngredients.Clear();
@@ -249,6 +248,7 @@ public class Mortar : MonoBehaviour
         IsIngredientDraggable = false;
         SetPestleDraggable(false);
         // Display Game Complete UI.
+        successPopUp.SetActive(true);
 
         if (AudioSource != null)
         {
@@ -262,6 +262,7 @@ public class Mortar : MonoBehaviour
         IsIngredientDraggable = false;
         SetPestleDraggable(false);
         // Display Game Over UI.
+        failPopUp.SetActive(true);
     }
 
     void UpdateTimerDisplay()

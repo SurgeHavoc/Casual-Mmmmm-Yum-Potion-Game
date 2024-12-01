@@ -1,12 +1,12 @@
 using UnityEngine;
 
-public class MandPInstructions : MonoBehaviour
+public class MandPIntruction : MonoBehaviour
 {
-    public GameObject instruct;
+   public GameObject instruct;
     public PauseScript pause;
     public Mortar mortar;
 
-    public void MIntructions()
+    public void Intructions()
     {
         instruct.SetActive(false);
         Time.timeScale = 1f;

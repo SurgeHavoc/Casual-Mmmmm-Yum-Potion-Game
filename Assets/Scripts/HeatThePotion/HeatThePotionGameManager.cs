@@ -13,11 +13,35 @@ public class HeatThePotionGameManager : MonoBehaviour
     private string RequiredDirection;
     private bool PlayerDidCorrectAction = false;
 
+    public PauseScript pause; // PauseMenu
+    public GameObject failPopUp;
+    public GameObject instruct; // hi
+    public GameObject successPopUp;
+
+    public GameObject bar;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        Intro();
+
         HeatKnobController.OnKnobRotated += HandleKnobRotation;
         StartNewSequence();
+
+    }
+    void Update()
+    {
+
+        // Hey Antonio this was the only way I could get the pause menu to work pls don't delete -Asha
+        if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.JoystickButton7))
+        {
+            if (!pause.GameIsPaused)
+                pause.Paused();
+            else
+                pause.Resume();
+        }
+    
+
     }
 
     private void OnDestroy()
@@ -43,6 +67,16 @@ public class HeatThePotionGameManager : MonoBehaviour
         {
             FailedAction();
         }
+    }
+
+    public void Intro() // coding for Instructions popup
+    {
+        instruct.SetActive(true);
+        pause.GameIsPaused = true;
+       // IsTimerRunning = false;
+        Time.timeScale = 0;
+        HideFeedback();
+        bar.SetActive(false);
     }
 
     private void HandleKnobRotation()
@@ -88,6 +122,7 @@ public class HeatThePotionGameManager : MonoBehaviour
         {
             // The minigame is now complete.
             Debug.Log("The potion is ready!");
+            successPopUp.SetActive(true);
         }
     }
 
@@ -97,6 +132,7 @@ public class HeatThePotionGameManager : MonoBehaviour
 
         Debug.Log("Failed " + RequiredDirection + " rotation!");
         ShowFeedback("Fail!");
+        failPopUp.SetActive(true);
     }
 
     public void StartNewSequence()
@@ -127,11 +163,10 @@ public class HeatThePotionGameManager : MonoBehaviour
         return RequiredDirection == "Left" ? "Left Arrow" : "Right Arrow";
     }
 
-    private void ShowFeedback(string message)
+    public void ShowFeedback(string message)
     {
         FeedbackText.text = message;
         FeedbackText.gameObject.SetActive(true);
-
         Invoke("HideFeedback", 3f);
     }
 

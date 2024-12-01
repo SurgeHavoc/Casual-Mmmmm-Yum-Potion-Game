@@ -10,7 +10,7 @@ public class ProgressBarController : MonoBehaviour
     public float ProgressSpeed = 0.2f;
     public TextMeshProUGUI SafeZoneDirectionText;
 
-    private bool IsIncreasing = true;
+    public bool IsIncreasing = true;
     private bool InSafeZone = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

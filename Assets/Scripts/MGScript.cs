@@ -14,18 +14,20 @@ public class MGScript : MonoBehaviour
         SceneManager.LoadScene(2);
     }
 
+    public void MP()
+    {
+        SceneManager.LoadScene(3);
+    }
+
     public void RubThePotion()
     {
-        // SceneManager.LoadScene();
+        SceneManager.LoadScene(4);
     }
 
     public void HeatThePotion()
     {
-        // SceneManager.LoadScene();
+        SceneManager.LoadScene(5);
     }
 
-    public void MP()
-    {
-        // SceneManager.LoadScene();
-    }
+    
 }

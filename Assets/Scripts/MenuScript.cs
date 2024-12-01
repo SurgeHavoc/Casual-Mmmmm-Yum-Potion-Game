@@ -9,6 +9,7 @@ public class MenuScript : MonoBehaviour
     public GameObject MM;
     public GameObject MG;
     public GameObject C;
+    public GameObject ST;
 
     public void PlayGame()
     {
@@ -43,17 +44,18 @@ public class MenuScript : MonoBehaviour
             MM.SetActive(true);
             C.SetActive(false);
         }
+        else if(ST.activeSelf == true)
+        {
+            ST.SetActive(false);
+            C.SetActive(true);
+            MM.SetActive(false);
+            MG.SetActive(false);
+        }
     }
 
-    // MiniGames
-    public void DancingSeed()
+    public void SpecialThanks()
     {
-        SceneManager.LoadScene(1);
-    }
-
-    public void PTI()
-    {
-        SceneManager.LoadScene(2);
+        ST.SetActive(true);
     }
 
     public void Quit()

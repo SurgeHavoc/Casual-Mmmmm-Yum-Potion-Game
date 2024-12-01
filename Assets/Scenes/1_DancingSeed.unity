@@ -371,11 +371,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9cf45dab8cb1a04d9aacec25424de8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &678226840 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6521654489563561784, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
-  m_PrefabInstance: {fileID: 1613197138}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &815302077 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6952161744882812665, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
@@ -924,7 +919,7 @@ PrefabInstance:
     - target: {fileID: 3922233885960037383, guid: e628714511a78c84a9374902592169c5, type: 3}
       propertyPath: MG
       value: 
-      objectReference: {fileID: 678226840}
+      objectReference: {fileID: 0}
     - target: {fileID: 3922233885960037383, guid: e628714511a78c84a9374902592169c5, type: 3}
       propertyPath: PM
       value: 
@@ -1127,12 +1122,28 @@ PrefabInstance:
       value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 1570111119893323096, guid: ca934e2173296e24cbb9529612da1d6f, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 4f654de6b72318d4ab691a54def3b4ac, type: 2}
+    - target: {fileID: 1570111119893323096, guid: ca934e2173296e24cbb9529612da1d6f, type: 3}
       propertyPath: m_fontSizeBase
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1570111119893323096, guid: ca934e2173296e24cbb9529612da1d6f, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1611107336688930546, guid: ca934e2173296e24cbb9529612da1d6f, type: 3}
       propertyPath: m_text
       value: Round Complete!
+      objectReference: {fileID: 0}
+    - target: {fileID: 1611107336688930546, guid: ca934e2173296e24cbb9529612da1d6f, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 4f654de6b72318d4ab691a54def3b4ac, type: 2}
+    - target: {fileID: 1611107336688930546, guid: ca934e2173296e24cbb9529612da1d6f, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1728349378608748110, guid: ca934e2173296e24cbb9529612da1d6f, type: 3}
       propertyPath: m_IsActive
@@ -1161,6 +1172,18 @@ PrefabInstance:
     - target: {fileID: 3649774398590860085, guid: ca934e2173296e24cbb9529612da1d6f, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0.4577942
+      objectReference: {fileID: 0}
+    - target: {fileID: 3778353826144970338, guid: ca934e2173296e24cbb9529612da1d6f, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 4f654de6b72318d4ab691a54def3b4ac, type: 2}
+    - target: {fileID: 3778353826144970338, guid: ca934e2173296e24cbb9529612da1d6f, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -5020373783421076337, guid: 4f654de6b72318d4ab691a54def3b4ac, type: 2}
+    - target: {fileID: 3778353826144970338, guid: ca934e2173296e24cbb9529612da1d6f, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4458021945582236094, guid: ca934e2173296e24cbb9529612da1d6f, type: 3}
       propertyPath: m_UiScaleMode
@@ -1343,8 +1366,16 @@ PrefabInstance:
       value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 9084905086950766621, guid: ca934e2173296e24cbb9529612da1d6f, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 4f654de6b72318d4ab691a54def3b4ac, type: 2}
+    - target: {fileID: 9084905086950766621, guid: ca934e2173296e24cbb9529612da1d6f, type: 3}
       propertyPath: m_fontSizeBase
       value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 9084905086950766621, guid: ca934e2173296e24cbb9529612da1d6f, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
