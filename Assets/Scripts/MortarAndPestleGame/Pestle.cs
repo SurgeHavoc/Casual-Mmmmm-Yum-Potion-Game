@@ -4,6 +4,8 @@ public class Pestle : MonoBehaviour
 {
     private bool IsDragging = false;
     private Camera MainCamera;
+    private Vector3 CursorPosition;
+    private PlayerInputActions PlayerInputActions;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

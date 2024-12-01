@@ -311,6 +311,54 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "MortarAndPestlePlayer",
+            "id": "33f73f09-d77b-4e56-8977-c8535c051637",
+            "actions": [
+                {
+                    "name": "MoveCursor",
+                    "type": "Value",
+                    "id": "89ccfdfe-c744-4147-9de1-d0ad940ab702",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "MouseClick",
+                    "type": "Button",
+                    "id": "1e48fe24-f4ba-47d2-8669-53c1a2d4076d",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "e0a0f6f6-78fe-45b6-a6ad-e67ad769a165",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveCursor",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3b647404-0cf0-4f8f-bf53-ee36ba93327d",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MouseClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

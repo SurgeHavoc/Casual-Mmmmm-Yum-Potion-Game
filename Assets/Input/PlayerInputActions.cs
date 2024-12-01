@@ -334,6 +334,54 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""MortarAndPestlePlayer"",
+            ""id"": ""33f73f09-d77b-4e56-8977-c8535c051637"",
+            ""actions"": [
+                {
+                    ""name"": ""MoveCursor"",
+                    ""type"": ""Value"",
+                    ""id"": ""89ccfdfe-c744-4147-9de1-d0ad940ab702"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""MouseClick"",
+                    ""type"": ""Button"",
+                    ""id"": ""1e48fe24-f4ba-47d2-8669-53c1a2d4076d"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""e0a0f6f6-78fe-45b6-a6ad-e67ad769a165"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveCursor"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3b647404-0cf0-4f8f-bf53-ee36ba93327d"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MouseClick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -355,6 +403,10 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_RubThePotionPlayer = asset.FindActionMap("RubThePotionPlayer", throwIfNotFound: true);
         m_RubThePotionPlayer_RubLeft = m_RubThePotionPlayer.FindAction("RubLeft", throwIfNotFound: true);
         m_RubThePotionPlayer_RubRight = m_RubThePotionPlayer.FindAction("RubRight", throwIfNotFound: true);
+        // MortarAndPestlePlayer
+        m_MortarAndPestlePlayer = asset.FindActionMap("MortarAndPestlePlayer", throwIfNotFound: true);
+        m_MortarAndPestlePlayer_MoveCursor = m_MortarAndPestlePlayer.FindAction("MoveCursor", throwIfNotFound: true);
+        m_MortarAndPestlePlayer_MouseClick = m_MortarAndPestlePlayer.FindAction("MouseClick", throwIfNotFound: true);
     }
 
     ~@PlayerInputActions()
@@ -363,6 +415,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         Debug.Assert(!m_PickTheIngredientsPlayer.enabled, "This will cause a leak and performance issues, PlayerInputActions.PickTheIngredientsPlayer.Disable() has not been called.");
         Debug.Assert(!m_HeatThePotionPlayer.enabled, "This will cause a leak and performance issues, PlayerInputActions.HeatThePotionPlayer.Disable() has not been called.");
         Debug.Assert(!m_RubThePotionPlayer.enabled, "This will cause a leak and performance issues, PlayerInputActions.RubThePotionPlayer.Disable() has not been called.");
+        Debug.Assert(!m_MortarAndPestlePlayer.enabled, "This will cause a leak and performance issues, PlayerInputActions.MortarAndPestlePlayer.Disable() has not been called.");
     }
 
     public void Dispose()
@@ -644,6 +697,60 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         }
     }
     public RubThePotionPlayerActions @RubThePotionPlayer => new RubThePotionPlayerActions(this);
+
+    // MortarAndPestlePlayer
+    private readonly InputActionMap m_MortarAndPestlePlayer;
+    private List<IMortarAndPestlePlayerActions> m_MortarAndPestlePlayerActionsCallbackInterfaces = new List<IMortarAndPestlePlayerActions>();
+    private readonly InputAction m_MortarAndPestlePlayer_MoveCursor;
+    private readonly InputAction m_MortarAndPestlePlayer_MouseClick;
+    public struct MortarAndPestlePlayerActions
+    {
+        private @PlayerInputActions m_Wrapper;
+        public MortarAndPestlePlayerActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @MoveCursor => m_Wrapper.m_MortarAndPestlePlayer_MoveCursor;
+        public InputAction @MouseClick => m_Wrapper.m_MortarAndPestlePlayer_MouseClick;
+        public InputActionMap Get() { return m_Wrapper.m_MortarAndPestlePlayer; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(MortarAndPestlePlayerActions set) { return set.Get(); }
+        public void AddCallbacks(IMortarAndPestlePlayerActions instance)
+        {
+            if (instance == null || m_Wrapper.m_MortarAndPestlePlayerActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_MortarAndPestlePlayerActionsCallbackInterfaces.Add(instance);
+            @MoveCursor.started += instance.OnMoveCursor;
+            @MoveCursor.performed += instance.OnMoveCursor;
+            @MoveCursor.canceled += instance.OnMoveCursor;
+            @MouseClick.started += instance.OnMouseClick;
+            @MouseClick.performed += instance.OnMouseClick;
+            @MouseClick.canceled += instance.OnMouseClick;
+        }
+
+        private void UnregisterCallbacks(IMortarAndPestlePlayerActions instance)
+        {
+            @MoveCursor.started -= instance.OnMoveCursor;
+            @MoveCursor.performed -= instance.OnMoveCursor;
+            @MoveCursor.canceled -= instance.OnMoveCursor;
+            @MouseClick.started -= instance.OnMouseClick;
+            @MouseClick.performed -= instance.OnMouseClick;
+            @MouseClick.canceled -= instance.OnMouseClick;
+        }
+
+        public void RemoveCallbacks(IMortarAndPestlePlayerActions instance)
+        {
+            if (m_Wrapper.m_MortarAndPestlePlayerActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IMortarAndPestlePlayerActions instance)
+        {
+            foreach (var item in m_Wrapper.m_MortarAndPestlePlayerActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_MortarAndPestlePlayerActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public MortarAndPestlePlayerActions @MortarAndPestlePlayer => new MortarAndPestlePlayerActions(this);
     public interface IDancingSeedPlayerActions
     {
         void OnMoveUp(InputAction.CallbackContext context);
@@ -664,5 +771,10 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     {
         void OnRubLeft(InputAction.CallbackContext context);
         void OnRubRight(InputAction.CallbackContext context);
+    }
+    public interface IMortarAndPestlePlayerActions
+    {
+        void OnMoveCursor(InputAction.CallbackContext context);
+        void OnMouseClick(InputAction.CallbackContext context);
     }
 }

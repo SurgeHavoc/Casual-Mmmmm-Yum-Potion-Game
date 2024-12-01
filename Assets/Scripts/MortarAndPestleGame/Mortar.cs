@@ -8,7 +8,17 @@ public class Mortar : MonoBehaviour
     public string[] CurrentRandomSequence = new string[3];
     public SpriteRenderer[] SequenceDisplay;
     public GameObject pestle;
-    public Dictionary<string, Color> IngredientColors; // Temporary mapping to colors.
+    public Dictionary<string, Sprite> IngredientSprites; // Map to sprites.
+
+    public Sprite AlfalfaSprite;
+    public Sprite AllspiceSprite;
+    public Sprite BabysBreathSprite;
+    public Sprite BelladonnaSprite;
+    public Sprite BorageSprite;
+    public Sprite CelandineSprite;
+    public Sprite FumitorySprite;
+    public Sprite HollyhockSprite;
+    public Sprite SnapdragonSprite;
 
     private List<string> DraggedIngredients = new List<string>();
     private int PestleCrushCount = 0;
@@ -31,6 +41,8 @@ public class Mortar : MonoBehaviour
     public GameObject instruct; // hi
     public GameObject successPopUp;
 
+    public AudioSource AudioSource;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
@@ -46,7 +58,7 @@ public class Mortar : MonoBehaviour
         UpdateTimerDisplay();
         IsTimerRunning = true;
 
-        InitializeColors();
+        InitializeIngredientSprites();
         GenerateRandomSequence();
 
         SetPestleDraggable(false);
@@ -95,20 +107,20 @@ public class Mortar : MonoBehaviour
         Time.timeScale = 0f;
     } 
 
-    // Temporary way of matching ingredients to a sequence.
-    private void InitializeColors()
+    // Matches ingredients to a sequence.
+    private void InitializeIngredientSprites()
     {
-        IngredientColors = new Dictionary<string, Color>
+        IngredientSprites = new Dictionary<string, Sprite>
         {
-            { "Apple", Color.red },
-            { "Banana", Color.yellow },
-            { "Cherry", new Color(0.5f, 0f, 0f) },
-            { "Blueberry", Color.blue },
-            { "Grape", new Color(0.5f, 0f, 0.5f) },
-            { "Turnip", Color.magenta },
-            { "Cabbage", Color.green },
-            { "Carrot", new Color(1f, 1f, 0f) },
-            { "Orange", new Color(1f, 0.5f, 0f) }
+            { "Alfalfa", AlfalfaSprite },
+            { "Allspice", AllspiceSprite },
+            { "BabysBreath", BabysBreathSprite },
+            { "Belladonna", BelladonnaSprite },
+            { "Borage", BorageSprite },
+            { "Celandine", CelandineSprite },
+            { "Fumitory", FumitorySprite },
+            { "Hollyhock", HollyhockSprite },
+            { "Snapdragon", SnapdragonSprite }
         };
     }
 
@@ -131,13 +143,13 @@ public class Mortar : MonoBehaviour
     {
         for (int i = 0; i < SequenceDisplay.Length; i++)
         {
-            if (i < CurrentRandomSequence.Length && IngredientColors.ContainsKey(CurrentRandomSequence[i]))
+            if (i < CurrentRandomSequence.Length && IngredientSprites.ContainsKey(CurrentRandomSequence[i]))
             {
-                SequenceDisplay[i].color = IngredientColors[CurrentRandomSequence[i]];
+                SequenceDisplay[i].sprite = IngredientSprites[CurrentRandomSequence[i]];
             }
             else
             {
-                SequenceDisplay[i].color = Color.clear;
+                SequenceDisplay[i].sprite = null;
             }
         }
     }
@@ -237,6 +249,11 @@ public class Mortar : MonoBehaviour
         IsIngredientDraggable = false;
         SetPestleDraggable(false);
         // Display Game Complete UI.
+
+        if (AudioSource != null)
+        {
+            AudioSource.Play();
+        }
     }
 
     private void GameOver()
