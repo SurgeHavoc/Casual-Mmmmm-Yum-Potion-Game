@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using TMPro;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class RubThePotionGame : MonoBehaviour
 {
@@ -60,7 +61,12 @@ public class RubThePotionGame : MonoBehaviour
 
     // References to GameObjects.
     public GameObject BottleGameObject;
+    public GameObject OtherBottleGameObject;
     public GameObject CompletedPotionGameObject;
+    public GameObject Sparkles1;
+    public GameObject Sparkles2;
+
+    private Coroutine SparkleCoroutine;
 
     private void Awake()
     {
@@ -256,10 +262,18 @@ public class RubThePotionGame : MonoBehaviour
         {
             BottleGameObject.SetActive(false);
         }
+        if (OtherBottleGameObject != null)
+        {
+            OtherBottleGameObject.SetActive(false);
+        }
         if (CompletedPotionGameObject != null)
         {
             CompletedPotionGameObject.SetActive(true);
         }
+
+        SparkleCoroutine = StartCoroutine(SparkleBlinkCoroutine());
+
+        StartCoroutine(LoadNextLevelAfterDelay(5f));
 
         PlaySound(WinSound);
 
@@ -304,6 +318,45 @@ public class RubThePotionGame : MonoBehaviour
         }
     }
 
+    IEnumerator SparkleBlinkCoroutine()
+    {
+        // Activate the sparkles initially.
+        if (Sparkles1 != null) Sparkles1.SetActive(true);
+        if (Sparkles2 != null) Sparkles2.SetActive(false);
+
+        bool toggle = false;
+        float BlinkInterval = 0.5f;
+
+        while (true)
+        {
+            toggle = !toggle;
+            if (Sparkles1 != null) Sparkles1.SetActive(toggle);
+            if (Sparkles2 != null) Sparkles2.SetActive(!toggle);
+
+            yield return new WaitForSeconds(BlinkInterval);
+        }
+    }
+
+    IEnumerator LoadNextLevelAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        LoadNextLevel();
+    }
+
+    void LoadNextLevel()
+    {
+        int NextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+
+        if (NextSceneIndex < SceneManager.sceneCountInBuildSettings)
+        {
+            SceneManager.LoadScene(NextSceneIndex);
+        }
+        else
+        {
+            Debug.Log("No more scenes to load!");
+        }
+    }
+
     void PlaySound(AudioClip clip)
     {
         if (clip != null && AudioSource != null)
@@ -333,6 +386,7 @@ public class RubThePotionGame : MonoBehaviour
             UpdateTimerDisplay();
             TimerText.color = Color.white;
         }
+
         if (GameOverPanel != null)
             GameOverPanel.SetActive(false);
         if (GameCompletePanel != null)
@@ -346,5 +400,13 @@ public class RubThePotionGame : MonoBehaviour
         {
             CompletedPotionGameObject.SetActive(false);
         }
+
+        if (SparkleCoroutine != null)
+        {
+            StopCoroutine(SparkleCoroutine);
+            SparkleCoroutine = null;
+        }
+        if (Sparkles1 != null) Sparkles1.SetActive(false);
+        if (Sparkles2 != null) Sparkles2.SetActive(false);
     }
 }

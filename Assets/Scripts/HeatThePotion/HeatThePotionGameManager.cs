@@ -5,6 +5,7 @@ public class HeatThePotionGameManager : MonoBehaviour
 {
     public ProgressBarController ProgressBarController;
     public HeatKnobController HeatKnobController;
+    public DirectionArrowController DirectionArrowController;
     public int RequiredSuccesses = 3;
     public TextMeshProUGUI FeedbackText;
 
