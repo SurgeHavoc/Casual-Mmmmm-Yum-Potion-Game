@@ -533,6 +533,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &273542665 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3538828339910884104, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
+  m_PrefabInstance: {fileID: 1490566092}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &518921440
 GameObject:
   m_ObjectHideFlags: 0
@@ -620,6 +625,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &553307021 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6952161744882812665, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
+  m_PrefabInstance: {fileID: 1490566092}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &658673395
 GameObject:
   m_ObjectHideFlags: 0
@@ -1117,6 +1127,7 @@ GameObject:
   m_Component:
   - component: {fileID: 782109629}
   - component: {fileID: 782109628}
+  - component: {fileID: 782109631}
   - component: {fileID: 782109630}
   m_Layer: 0
   m_Name: RubThePotionGameController
@@ -1267,6 +1278,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &782109631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782109627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f74485e5846f4a449deb9d138991776, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameIsPaused: 0
+  MG: {fileID: 1400723360}
+  C: {fileID: 1095317059}
+  PM: {fileID: 553307021}
+  instruct: {fileID: 273542665}
 --- !u!1 &934977389
 GameObject:
   m_ObjectHideFlags: 0
@@ -1492,6 +1520,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1095317059 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9082193626025854635, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
+  m_PrefabInstance: {fileID: 1490566092}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1101737089
 GameObject:
   m_ObjectHideFlags: 0
@@ -1939,6 +1972,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1165091670}
   m_CullTransparentMesh: 1
+--- !u!1 &1400723360 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4541484211764290686, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
+  m_PrefabInstance: {fileID: 1490566092}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1421569820
 GameObject:
   m_ObjectHideFlags: 0
