@@ -32,7 +32,7 @@ public class RubThePotionGame : MonoBehaviour
     public float TimeLimit = 30f;
     private float TimeRemaining;
     public TextMeshProUGUI TimerText;
-    private bool IsTimerRunning = false;
+    public bool IsTimerRunning = false;
 
     private bool IsBlinking = false;
 
@@ -68,6 +68,11 @@ public class RubThePotionGame : MonoBehaviour
 
     private Coroutine SparkleCoroutine;
 
+    public PauseScript pause; // PauseMenu
+    public GameObject failPopUp;
+    public GameObject instruct; // hi
+    public GameObject successPopUp;
+
     private void Awake()
     {
         PlayerInputActions = new PlayerInputActions();
@@ -94,6 +99,8 @@ public class RubThePotionGame : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        Intro();
+
         TimeRemaining = TimeLimit;
         IsTimerRunning = true;
 
@@ -152,6 +159,24 @@ public class RubThePotionGame : MonoBehaviour
                 BlinkTimer();
             }
         }
+
+        // Hey Antonio this was the only way I could get the pause menu to work pls don't delete -Asha
+        if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.JoystickButton7))
+        {
+            if (!pause.GameIsPaused)
+                pause.Paused();
+            else
+                pause.Resume();
+        }
+    }
+
+    public void Intro() // coding for Instructions popup
+    {
+
+        instruct.SetActive(true);
+        pause.GameIsPaused = true;
+        IsTimerRunning = true;
+        Time.timeScale = 0;
     }
 
     private void OnRubLeft(InputAction.CallbackContext context)
@@ -278,6 +303,7 @@ public class RubThePotionGame : MonoBehaviour
         PlaySound(WinSound);
 
         Debug.Log("Potion is ready! You win!");
+        successPopUp.SetActive(true);
 
         if (GameCompletePanel != null)
             GameCompletePanel.SetActive(true);
@@ -289,6 +315,7 @@ public class RubThePotionGame : MonoBehaviour
         IsTimerRunning = false;
 
         Debug.Log("Game over! " + reason);
+        failPopUp.SetActive(true);
 
         //PlaySound(LoseSound);
 

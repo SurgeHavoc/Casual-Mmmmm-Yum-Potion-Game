@@ -74,4 +74,9 @@ public class PauseScript : MonoBehaviour
         C.SetActive(false);
         PM.SetActive(true);
     }
+
+    public void RtMM()
+    {
+        SceneManager.LoadScene(0);
+    }
 }

@@ -538,6 +538,21 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3538828339910884104, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
   m_PrefabInstance: {fileID: 1490566092}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &273542666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273542665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d163131c63edfda458aa18b825e54822, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  instruct: {fileID: 273542665}
+  pause: {fileID: 1490566093}
+  rub: {fileID: 782109628}
 --- !u!1 &518921440
 GameObject:
   m_ObjectHideFlags: 0
@@ -1154,6 +1169,7 @@ MonoBehaviour:
   HandMoveDuration: 0.5
   TimeLimit: 30
   TimerText: {fileID: 658673397}
+  IsTimerRunning: 0
   MaxIncorrectAttempts: 2
   AttemptsText: {fileID: 934977391}
   GameCompletePanel: {fileID: 700897438}
@@ -1166,6 +1182,10 @@ MonoBehaviour:
   CompletedPotionGameObject: {fileID: 1781147333}
   Sparkles1: {fileID: 1049333707}
   Sparkles2: {fileID: 1101737089}
+  pause: {fileID: 1490566093}
+  failPopUp: {fileID: 1490566095}
+  instruct: {fileID: 273542665}
+  successPopUp: {fileID: 1490566094}
 --- !u!4 &782109629
 Transform:
   m_ObjectHideFlags: 0
@@ -2106,6 +2126,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3211478401567962622, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
+      propertyPath: m_text
+      value: Use the DPad or Arrow keys to Rub The Potion
+      objectReference: {fileID: 0}
     - target: {fileID: 3538828339910884104, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -2154,11 +2178,47 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8999638242919754680, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 273542666}
+    - target: {fileID: 8999638242919754680, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Intructions
+      objectReference: {fileID: 0}
+    - target: {fileID: 8999638242919754680, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: RtPInstructions, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3538828339910884104, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 273542666}
   m_SourcePrefab: {fileID: 100100000, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
+--- !u!114 &1490566093 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4350888457536083509, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
+  m_PrefabInstance: {fileID: 1490566092}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553307021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f74485e5846f4a449deb9d138991776, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1490566094 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 691456834523076972, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
+  m_PrefabInstance: {fileID: 1490566092}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1490566095 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2193756377235899898, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
+  m_PrefabInstance: {fileID: 1490566092}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1529034619
 GameObject:
   m_ObjectHideFlags: 0
