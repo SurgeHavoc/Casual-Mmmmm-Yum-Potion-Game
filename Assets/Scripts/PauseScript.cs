@@ -61,13 +61,6 @@ public class PauseScript : MonoBehaviour
         C.SetActive(true);
     }
 
-    public void Intructions()
-    {
-        instruct.SetActive(false);
-        Time.timeScale = 1f;
-        GameIsPaused = false;
-    }
-
     public void BackToPause()
     {
         MG.SetActive(false);

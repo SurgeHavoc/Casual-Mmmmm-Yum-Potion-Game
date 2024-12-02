@@ -32,7 +32,7 @@ public class HeatThePotionGameManagerEndless : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //Intro();
+        Intro();
 
         if (PotionSpriteRenderer != null)
         {
@@ -181,6 +181,7 @@ public class HeatThePotionGameManagerEndless : MonoBehaviour
             // The minigame is now complete.
             Debug.Log("The potion is ready!");
             successPopUp.SetActive(true);
+            bar.SetActive(false);
 
             if (AudioSource != null)
             {
@@ -204,6 +205,7 @@ public class HeatThePotionGameManagerEndless : MonoBehaviour
         Debug.Log("Failed " + RequiredDirection + " rotation!");
         ShowFeedback("Fail!");
         failPopUp.SetActive(true);
+        bar.SetActive(false);
     }
 
     public void StartNewSequence()

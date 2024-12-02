@@ -1,16 +1,15 @@
 using UnityEngine;
 
-public class MandPIntruction : MonoBehaviour
+public class Instructions : MonoBehaviour
 {
     public GameObject instruct;
     public PauseScript pause;
-    public Mortar mortar;
+    public GameManager pti;
 
     public void Intructions()
     {
         instruct.SetActive(false);
         Time.timeScale = 1f;
         pause.GameIsPaused = false;
-        mortar.IsTimerRunning = true;
     }
 }

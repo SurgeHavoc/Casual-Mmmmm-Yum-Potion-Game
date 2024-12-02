@@ -2126,17 +2126,54 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 691456834523076972, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1456131308233519856, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.59339
+      objectReference: {fileID: 0}
+    - target: {fileID: 1456131308233519856, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6823985
+      objectReference: {fileID: 0}
+    - target: {fileID: 1456131308233519856, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.59339
+      objectReference: {fileID: 0}
+    - target: {fileID: 1456131308233519856, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 90.8
+      objectReference: {fileID: 0}
     - target: {fileID: 3211478401567962622, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
       propertyPath: m_text
-      value: Use the DPad or Arrow keys to Rub The Potion
+      value: Use  the  Dpad  or  Arrow keys to rub the potion! Three left three right
+        don't forget!
+      objectReference: {fileID: 0}
+    - target: {fileID: 3211478401567962622, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
+      propertyPath: m_fontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3211478401567962622, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3538828339910884104, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3668238839132982813, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 23.1
+      objectReference: {fileID: 0}
     - target: {fileID: 7198306776967819132, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
       propertyPath: m_Name
       value: MainMenuBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 7505370725771825631, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.099990845
       objectReference: {fileID: 0}
     - target: {fileID: 7560363131600257247, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2177,6 +2214,10 @@ PrefabInstance:
     - target: {fileID: 7560363131600257247, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7779683810987086080, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1.6000061
       objectReference: {fileID: 0}
     - target: {fileID: 8999638242919754680, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

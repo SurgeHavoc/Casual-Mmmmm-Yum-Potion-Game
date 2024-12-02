@@ -136,9 +136,6 @@ public class DancingSeedGame : MonoBehaviour
         // Initialize the timer here.
         TimeRemaining = TimeLimit;
         UpdateTimerDisplay();
-
-        // Begin the countdown on game start here.
-        StartCountdown(); 
     }
 
     public void StartCountdown()

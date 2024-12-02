@@ -667,10 +667,42 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -0.40000916
       objectReference: {fileID: 0}
+    - target: {fileID: 1970392483035933664, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.44613656
+      objectReference: {fileID: 0}
+    - target: {fileID: 1970392483035933664, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.93531907
+      objectReference: {fileID: 0}
+    - target: {fileID: 1970392483035933664, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.56686
+      objectReference: {fileID: 0}
+    - target: {fileID: 1970392483035933664, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.0999756
+      objectReference: {fileID: 0}
+    - target: {fileID: 2193756377235899898, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3211478401567962622, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
       propertyPath: m_text
       value: 'Use  the  Dpad  or  the Arrow Keys   to  turn the knob in the right
         direction. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 3300002376191423985, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.9445496
+      objectReference: {fileID: 0}
+    - target: {fileID: 3300002376191423985, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.76154155
+      objectReference: {fileID: 0}
+    - target: {fileID: 3300002376191423985, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.76154155
       objectReference: {fileID: 0}
     - target: {fileID: 3538828339910884104, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
       propertyPath: m_IsActive
@@ -1138,10 +1170,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1990521150}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.2753932, y: 0.20636958}
-  m_AnchorMax: {x: 0.42047867, y: 0.28714782}
-  m_AnchoredPosition: {x: -4.096222, y: 0.7471924}
-  m_SizeDelta: {x: 0.9118347, y: -1.9743042}
+  m_AnchorMin: {x: 0.31266665, y: 0.20741639}
+  m_AnchorMax: {x: 0.4584375, y: 0.28714782}
+  m_AnchoredPosition: {x: 2.5, y: 0.24719238}
+  m_SizeDelta: {x: -0.08816528, y: -0.9743042}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &986980303
 MonoBehaviour:

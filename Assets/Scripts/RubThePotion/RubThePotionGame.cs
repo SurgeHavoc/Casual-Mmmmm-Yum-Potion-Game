@@ -102,7 +102,6 @@ public class RubThePotionGame : MonoBehaviour
         Intro();
 
         TimeRemaining = TimeLimit;
-        IsTimerRunning = true;
 
         if (TimerText != null)
         {
@@ -172,10 +171,9 @@ public class RubThePotionGame : MonoBehaviour
 
     public void Intro() // coding for Instructions popup
     {
-
         instruct.SetActive(true);
         pause.GameIsPaused = true;
-        IsTimerRunning = true;
+        IsTimerRunning = false;
         Time.timeScale = 0;
     }
 

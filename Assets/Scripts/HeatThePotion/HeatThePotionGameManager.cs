@@ -181,6 +181,7 @@ public class HeatThePotionGameManager : MonoBehaviour
             // The minigame is now complete.
             Debug.Log("The potion is ready!");
             successPopUp.SetActive(true);
+            bar.SetActive(false);
 
             if (AudioSource != null)
             {
@@ -204,6 +205,7 @@ public class HeatThePotionGameManager : MonoBehaviour
         Debug.Log("Failed " + RequiredDirection + " rotation!");
         ShowFeedback("Fail!");
         failPopUp.SetActive(true);
+        bar.SetActive(false);
     }
 
     public void StartNewSequence()

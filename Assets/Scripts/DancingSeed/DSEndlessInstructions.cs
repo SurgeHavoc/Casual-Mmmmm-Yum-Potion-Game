@@ -1,16 +1,18 @@
 using UnityEngine;
 
-public class MandPIntruction : MonoBehaviour
+public class DSEndlessInstructions : MonoBehaviour
 {
     public GameObject instruct;
     public PauseScript pause;
-    public Mortar mortar;
+    public DancingSeedGameEndless seed;
 
     public void Intructions()
     {
         instruct.SetActive(false);
         Time.timeScale = 1f;
         pause.GameIsPaused = false;
-        mortar.IsTimerRunning = true;
+        // Begin the countdown on game start here.
+        seed.StartCountdown(); 
     }
+
 }
