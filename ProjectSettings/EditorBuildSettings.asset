@@ -29,21 +29,21 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/6_YouWinScene.unity
     guid: 9719dab9be17435418c8db127714be16
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/7_EndlessDancingSeed.unity
-    guid: 756f039dc9d5395418db8ab153f2e2f3
-  - enabled: 0
+    guid: 194f26a3259ec964888847ecddf2be4c
+  - enabled: 1
     path: Assets/Scenes/8_EndlessPickTheIngredients.unity
-    guid: f4bf6f28a7640624590e10b547f4eafb
-  - enabled: 0
+    guid: 37f612645ab3f3246a8682452395ddc2
+  - enabled: 1
     path: Assets/Scenes/9_EndlessMortarAndPestle.unity
-    guid: 31a8543fb46685d4baaea28040fcef9a
-  - enabled: 0
+    guid: d8969df10e2b367438ee5d5882a9cf0d
+  - enabled: 1
     path: Assets/Scenes/10_EndlessHeatThePotion.unity
-    guid: 0d4b874dbad140c43a1858b3547b7232
-  - enabled: 0
+    guid: 6dcf7a47e2aca3e45bfe22269e664619
+  - enabled: 1
     path: Assets/Scenes/11_EndlessRubThePotion.unity
-    guid: cb3e727a893a856468f14aeabbd166bf
+    guid: 57b0f85074b54894cae2aff12013dc29
   - enabled: 0
     path: Assets/Scenes/Debug_RubThePotion.unity
     guid: 982095c55d710c2498a7a4851a4159c5

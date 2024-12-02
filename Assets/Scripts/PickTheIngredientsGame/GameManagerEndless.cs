@@ -6,10 +6,10 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using NUnit.Framework;
 
-public class GameManager : MonoBehaviour
+public class GameManagerEndless : MonoBehaviour
 {
 
-    public static GameManager Instance;
+    public static GameManagerEndless Instance;
 
     private int TotalIngredients;
     private int CollectedIngredients = 0;
@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
 
     public bool IsGameOver = false;
 
-    public ClawHandController ClawHandControllerInstance;
+    public ClawHandControllerEndless ClawHandControllerInstance;
 
     public Button RestartButton;
     public Button MainMenuButton;
@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
     public GameObject instruct; // hi
     public GameObject successPopUp;
 
-    public Ingredient IngredientPrefab;
+    public IngredientEndless IngredientPrefab;
     public List<Sprite> AvailableIngredientSprites;
     public List<Transform> IngredientSpawnPoints;
 
@@ -184,7 +184,7 @@ public class GameManager : MonoBehaviour
 
     void SpawnIngredient(Sprite sprite, Vector3 position)
     {
-        Ingredient NewIngredient = Instantiate(IngredientPrefab, GameCanvas.transform);
+        IngredientEndless NewIngredient = Instantiate(IngredientPrefab, GameCanvas.transform);
         NewIngredient.SetIngredientSprite(sprite);
         NewIngredient.gameObject.tag = "Ingredient";
 
@@ -313,17 +313,35 @@ public class GameManager : MonoBehaviour
 
         GameCompletePanel.SetActive(false);
 
+        int MinSceneIndex = 7;
+        int MaxSceneIndex = 11;
         int CurrentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
-        int NextSceneIndex = CurrentSceneIndex + 1;
+        // Check to make sure that MaxSceneIndex doesn't exceed the number of scenes in build settings.
+        MaxSceneIndex = Mathf.Min(MaxSceneIndex, SceneManager.sceneCountInBuildSettings - 1);
 
-        if (NextSceneIndex < SceneManager.sceneCountInBuildSettings)
+        // Create a list of possible scene indices excluding the current scene to avoid repeating the same scene for next minigame.
+        List<int> PossibleSceneIndices = new List<int>();
+        for (int i = MinSceneIndex; i <= MaxSceneIndex; i++)
         {
-            SceneManager.LoadScene(NextSceneIndex);
+            if (i != CurrentSceneIndex)
+            {
+                PossibleSceneIndices.Add(i);
+            }
+        }
+
+        if (PossibleSceneIndices.Count > 0)
+        {
+            // Select a random index from the list of possible scene indices.
+            int RandomIndex = Random.Range(0, PossibleSceneIndices.Count);
+            int RandomSceneIndex = PossibleSceneIndices[RandomIndex];
+
+            // Load the randomly selected scene other than the current scene.
+            SceneManager.LoadScene(RandomSceneIndex);
         }
         else
         {
-            Debug.Log("No more scenes. Maybe pause the game and exit?");
+            Debug.LogWarning("No other scenes available to load, try adding scenes to the build settings.");
         }
     }
 

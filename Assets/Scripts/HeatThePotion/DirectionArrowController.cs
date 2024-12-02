@@ -2,21 +2,21 @@ using UnityEngine;
 
 public class DirectionArrowController : MonoBehaviour
 {
-    private RectTransform ArrowRectTransform;
+    private Transform ArrowTransform;
 
     private void Awake()
     {
-        ArrowRectTransform = GetComponent<RectTransform>();
+        ArrowTransform = GetComponent<Transform>();
     }
 
     public void PointLeft()
     {
-        ArrowRectTransform.localRotation = Quaternion.Euler(0, 0, 90);
+        ArrowTransform.localRotation = Quaternion.Euler(0, 0, 90);
     }
 
     public void PointRight()
     {
-        ArrowRectTransform.localRotation = Quaternion.Euler(0, 0, -90);
+        ArrowTransform.localRotation = Quaternion.Euler(0, 0, -90);
     }
 
     public void HideArrow()

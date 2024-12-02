@@ -1,0 +1,145 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8230427984523217907
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3807467815414083112, guid: e628714511a78c84a9374902592169c5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 960
+      objectReference: {fileID: 0}
+    - target: {fileID: 3807467815414083112, guid: e628714511a78c84a9374902592169c5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 540
+      objectReference: {fileID: 0}
+    - target: {fileID: 3807467815414083112, guid: e628714511a78c84a9374902592169c5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3807467815414083112, guid: e628714511a78c84a9374902592169c5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3807467815414083112, guid: e628714511a78c84a9374902592169c5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3807467815414083112, guid: e628714511a78c84a9374902592169c5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3807467815414083112, guid: e628714511a78c84a9374902592169c5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3807467815414083112, guid: e628714511a78c84a9374902592169c5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3807467815414083112, guid: e628714511a78c84a9374902592169c5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3807467815414083112, guid: e628714511a78c84a9374902592169c5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3922233885960037383, guid: e628714511a78c84a9374902592169c5, type: 3}
+      propertyPath: DS
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3922233885960037383, guid: e628714511a78c84a9374902592169c5, type: 3}
+      propertyPath: MG
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3922233885960037383, guid: e628714511a78c84a9374902592169c5, type: 3}
+      propertyPath: starttimer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6187767261178961511, guid: e628714511a78c84a9374902592169c5, type: 3}
+      propertyPath: m_Volume
+      value: 0.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 6187767261178961511, guid: e628714511a78c84a9374902592169c5, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: a079ded521ae51b4dbbe71628fe57cba, type: 3}
+    - target: {fileID: 6187767261178961511, guid: e628714511a78c84a9374902592169c5, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a079ded521ae51b4dbbe71628fe57cba, type: 3}
+    - target: {fileID: 6991632848172830501, guid: e628714511a78c84a9374902592169c5, type: 3}
+      propertyPath: m_Name
+      value: DancingSeedGameControllerEndless Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8937675803569314313, guid: e628714511a78c84a9374902592169c5, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6991632848172830501, guid: e628714511a78c84a9374902592169c5, type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 545965564151781510}
+  m_SourcePrefab: {fileID: 100100000, guid: e628714511a78c84a9374902592169c5, type: 3}
+--- !u!1 &1386862038507816150 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6991632848172830501, guid: e628714511a78c84a9374902592169c5, type: 3}
+  m_PrefabInstance: {fileID: 8230427984523217907}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &545965564151781510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1386862038507816150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a82bc9b43b0fe1c4596fe6b83472d62c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ArrowPromptPrefab: {fileID: 1317249035256272296, guid: 01081a260a0851d4296a55d13cc64850, type: 3}
+  KeyPromptPanel: {fileID: 0}
+  PlayerRenderer: {fileID: 0}
+  TotalRounds: 3
+  IdleSprite: {fileID: 21300000, guid: 0e537ff43634d96448780b2fb61a86f3, type: 3}
+  LeftPoseSprite: {fileID: 21300000, guid: 5ab5f4712d934a94d8afa9aa7997aef6, type: 3}
+  UpPoseSprite: {fileID: 21300000, guid: 505854f8b9a777047a8577bf098fc47b, type: 3}
+  UpStinkyPoseSprite: {fileID: 21300000, guid: b38b771e2e642904a8434b44a311b7f0, type: 3}
+  DownPoseSprite: {fileID: 21300000, guid: 4c2eb6a918036234aac229bf9a5c182c, type: 3}
+  RightPoseSprite: {fileID: 21300000, guid: b880faaff9cded047a016207f18fa9cb, type: 3}
+  TransformationSprite: {fileID: 21300000, guid: 1a410573b3ce7e14aa23bcc3e970c454, type: 3}
+  pause: {fileID: 4924343510315118580}
+  failPopUp: {fileID: 0}
+  instruct: {fileID: 0}
+  successPopUp: {fileID: 0}
+  TimeLimit: 20
+  TimerText: {fileID: 0}
+  RoundCompleteText: {fileID: 0}
+  RoundCompleteDisplayTime: 2
+  CountdownText: {fileID: 0}
+  CountdownInterval: 1
+  GameOverText: {fileID: 0}
+  BackgroundMusicSource: {fileID: 0}
+  CountdownAudioSource: {fileID: 2875274786042140052}
+  CountdownBeepClip: {fileID: 8300000, guid: 95fe4a1f8a6c1604ea301f79adce1e22, type: 3}
+--- !u!82 &2875274786042140052 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6187767261178961511, guid: e628714511a78c84a9374902592169c5, type: 3}
+  m_PrefabInstance: {fileID: 8230427984523217907}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4924343510315118580 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3922233885960037383, guid: e628714511a78c84a9374902592169c5, type: 3}
+  m_PrefabInstance: {fileID: 8230427984523217907}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1386862038507816150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f74485e5846f4a449deb9d138991776, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

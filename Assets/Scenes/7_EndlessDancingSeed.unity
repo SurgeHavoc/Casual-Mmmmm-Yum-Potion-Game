@@ -360,17 +360,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 691456834523076972, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
   m_PrefabInstance: {fileID: 1613197138}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &484838873 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8937675803569314313, guid: e628714511a78c84a9374902592169c5, type: 3}
-  m_PrefabInstance: {fileID: 6393692068988161963}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9cf45dab8cb1a04d9aacec25424de8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &815302077 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6952161744882812665, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
@@ -720,7 +709,7 @@ PrefabInstance:
     - target: {fileID: 4350888457536083509, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
       propertyPath: DS
       value: 
-      objectReference: {fileID: 484838873}
+      objectReference: {fileID: 0}
     - target: {fileID: 7198306776967819132, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
       propertyPath: m_Name
       value: MainMenuBar
@@ -795,6 +784,115 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &1232687939740614614
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 545965564151781510, guid: 7539d474bb43eb5409ad9197712ede94, type: 3}
+      propertyPath: instruct
+      value: 
+      objectReference: {fileID: 1636010713}
+    - target: {fileID: 545965564151781510, guid: 7539d474bb43eb5409ad9197712ede94, type: 3}
+      propertyPath: TimerText
+      value: 
+      objectReference: {fileID: 360799816}
+    - target: {fileID: 545965564151781510, guid: 7539d474bb43eb5409ad9197712ede94, type: 3}
+      propertyPath: failPopUp
+      value: 
+      objectReference: {fileID: 1613197139}
+    - target: {fileID: 545965564151781510, guid: 7539d474bb43eb5409ad9197712ede94, type: 3}
+      propertyPath: GameOverText
+      value: 
+      objectReference: {fileID: 1340165516}
+    - target: {fileID: 545965564151781510, guid: 7539d474bb43eb5409ad9197712ede94, type: 3}
+      propertyPath: successPopUp
+      value: 
+      objectReference: {fileID: 371600716}
+    - target: {fileID: 545965564151781510, guid: 7539d474bb43eb5409ad9197712ede94, type: 3}
+      propertyPath: CountdownText
+      value: 
+      objectReference: {fileID: 1704393670}
+    - target: {fileID: 545965564151781510, guid: 7539d474bb43eb5409ad9197712ede94, type: 3}
+      propertyPath: KeyPromptPanel
+      value: 
+      objectReference: {fileID: 1003178160}
+    - target: {fileID: 545965564151781510, guid: 7539d474bb43eb5409ad9197712ede94, type: 3}
+      propertyPath: PlayerRenderer
+      value: 
+      objectReference: {fileID: 67748033}
+    - target: {fileID: 545965564151781510, guid: 7539d474bb43eb5409ad9197712ede94, type: 3}
+      propertyPath: RoundCompleteText
+      value: 
+      objectReference: {fileID: 1030291791}
+    - target: {fileID: 545965564151781510, guid: 7539d474bb43eb5409ad9197712ede94, type: 3}
+      propertyPath: BackgroundMusicSource
+      value: 
+      objectReference: {fileID: 246277109}
+    - target: {fileID: 1386862038507816150, guid: 7539d474bb43eb5409ad9197712ede94, type: 3}
+      propertyPath: m_Name
+      value: DancingSeedGameControllerEndless
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924343510315118580, guid: 7539d474bb43eb5409ad9197712ede94, type: 3}
+      propertyPath: C
+      value: 
+      objectReference: {fileID: 300545325}
+    - target: {fileID: 4924343510315118580, guid: 7539d474bb43eb5409ad9197712ede94, type: 3}
+      propertyPath: PM
+      value: 
+      objectReference: {fileID: 815302077}
+    - target: {fileID: 4924343510315118580, guid: 7539d474bb43eb5409ad9197712ede94, type: 3}
+      propertyPath: instruct
+      value: 
+      objectReference: {fileID: 1636010713}
+    - target: {fileID: 5111178117973403099, guid: 7539d474bb43eb5409ad9197712ede94, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 960
+      objectReference: {fileID: 0}
+    - target: {fileID: 5111178117973403099, guid: 7539d474bb43eb5409ad9197712ede94, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 540
+      objectReference: {fileID: 0}
+    - target: {fileID: 5111178117973403099, guid: 7539d474bb43eb5409ad9197712ede94, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5111178117973403099, guid: 7539d474bb43eb5409ad9197712ede94, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5111178117973403099, guid: 7539d474bb43eb5409ad9197712ede94, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5111178117973403099, guid: 7539d474bb43eb5409ad9197712ede94, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5111178117973403099, guid: 7539d474bb43eb5409ad9197712ede94, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5111178117973403099, guid: 7539d474bb43eb5409ad9197712ede94, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5111178117973403099, guid: 7539d474bb43eb5409ad9197712ede94, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5111178117973403099, guid: 7539d474bb43eb5409ad9197712ede94, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7539d474bb43eb5409ad9197712ede94, type: 3}
 --- !u!1001 &2247462016202766187
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -860,143 +958,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 947cd6a5649bf2e4ebf95e10e2e0c61b, type: 3}
---- !u!1001 &6393692068988161963
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3807467815414083112, guid: e628714511a78c84a9374902592169c5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 960
-      objectReference: {fileID: 0}
-    - target: {fileID: 3807467815414083112, guid: e628714511a78c84a9374902592169c5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 540
-      objectReference: {fileID: 0}
-    - target: {fileID: 3807467815414083112, guid: e628714511a78c84a9374902592169c5, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3807467815414083112, guid: e628714511a78c84a9374902592169c5, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3807467815414083112, guid: e628714511a78c84a9374902592169c5, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3807467815414083112, guid: e628714511a78c84a9374902592169c5, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3807467815414083112, guid: e628714511a78c84a9374902592169c5, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3807467815414083112, guid: e628714511a78c84a9374902592169c5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3807467815414083112, guid: e628714511a78c84a9374902592169c5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3807467815414083112, guid: e628714511a78c84a9374902592169c5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3922233885960037383, guid: e628714511a78c84a9374902592169c5, type: 3}
-      propertyPath: C
-      value: 
-      objectReference: {fileID: 300545325}
-    - target: {fileID: 3922233885960037383, guid: e628714511a78c84a9374902592169c5, type: 3}
-      propertyPath: DS
-      value: 
-      objectReference: {fileID: 484838873}
-    - target: {fileID: 3922233885960037383, guid: e628714511a78c84a9374902592169c5, type: 3}
-      propertyPath: MG
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3922233885960037383, guid: e628714511a78c84a9374902592169c5, type: 3}
-      propertyPath: PM
-      value: 
-      objectReference: {fileID: 815302077}
-    - target: {fileID: 3922233885960037383, guid: e628714511a78c84a9374902592169c5, type: 3}
-      propertyPath: instruct
-      value: 
-      objectReference: {fileID: 1636010713}
-    - target: {fileID: 3922233885960037383, guid: e628714511a78c84a9374902592169c5, type: 3}
-      propertyPath: starttimer
-      value: 
-      objectReference: {fileID: 484838873}
-    - target: {fileID: 6187767261178961511, guid: e628714511a78c84a9374902592169c5, type: 3}
-      propertyPath: m_Volume
-      value: 0.74
-      objectReference: {fileID: 0}
-    - target: {fileID: 6187767261178961511, guid: e628714511a78c84a9374902592169c5, type: 3}
-      propertyPath: m_Resource
-      value: 
-      objectReference: {fileID: 8300000, guid: a079ded521ae51b4dbbe71628fe57cba, type: 3}
-    - target: {fileID: 6187767261178961511, guid: e628714511a78c84a9374902592169c5, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: a079ded521ae51b4dbbe71628fe57cba, type: 3}
-    - target: {fileID: 6991632848172830501, guid: e628714511a78c84a9374902592169c5, type: 3}
-      propertyPath: m_Name
-      value: DancingSeedGameController
-      objectReference: {fileID: 0}
-    - target: {fileID: 8937675803569314313, guid: e628714511a78c84a9374902592169c5, type: 3}
-      propertyPath: intro
-      value: 
-      objectReference: {fileID: 1636010713}
-    - target: {fileID: 8937675803569314313, guid: e628714511a78c84a9374902592169c5, type: 3}
-      propertyPath: instruct
-      value: 
-      objectReference: {fileID: 1636010713}
-    - target: {fileID: 8937675803569314313, guid: e628714511a78c84a9374902592169c5, type: 3}
-      propertyPath: TimerText
-      value: 
-      objectReference: {fileID: 360799816}
-    - target: {fileID: 8937675803569314313, guid: e628714511a78c84a9374902592169c5, type: 3}
-      propertyPath: failPopUp
-      value: 
-      objectReference: {fileID: 1613197139}
-    - target: {fileID: 8937675803569314313, guid: e628714511a78c84a9374902592169c5, type: 3}
-      propertyPath: GameOverText
-      value: 
-      objectReference: {fileID: 1340165516}
-    - target: {fileID: 8937675803569314313, guid: e628714511a78c84a9374902592169c5, type: 3}
-      propertyPath: successPopUp
-      value: 
-      objectReference: {fileID: 371600716}
-    - target: {fileID: 8937675803569314313, guid: e628714511a78c84a9374902592169c5, type: 3}
-      propertyPath: CountdownText
-      value: 
-      objectReference: {fileID: 1704393670}
-    - target: {fileID: 8937675803569314313, guid: e628714511a78c84a9374902592169c5, type: 3}
-      propertyPath: KeyPromptPanel
-      value: 
-      objectReference: {fileID: 1003178160}
-    - target: {fileID: 8937675803569314313, guid: e628714511a78c84a9374902592169c5, type: 3}
-      propertyPath: PlayerRenderer
-      value: 
-      objectReference: {fileID: 67748033}
-    - target: {fileID: 8937675803569314313, guid: e628714511a78c84a9374902592169c5, type: 3}
-      propertyPath: RoundCompleteText
-      value: 
-      objectReference: {fileID: 1030291791}
-    - target: {fileID: 8937675803569314313, guid: e628714511a78c84a9374902592169c5, type: 3}
-      propertyPath: BackgroundMusicSource
-      value: 
-      objectReference: {fileID: 246277109}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e628714511a78c84a9374902592169c5, type: 3}
 --- !u!1001 &7482275360782504360
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1402,7 +1363,7 @@ SceneRoots:
   - {fileID: 1064962405}
   - {fileID: 2247462016202766187}
   - {fileID: 908839212}
-  - {fileID: 6393692068988161963}
+  - {fileID: 1232687939740614614}
   - {fileID: 7482275360782504360}
   - {fileID: 1613197138}
   - {fileID: 1398358218}

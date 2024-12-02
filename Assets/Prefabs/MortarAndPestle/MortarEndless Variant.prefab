@@ -1,0 +1,353 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5487572850525326601
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1395693728584051664, guid: 1b07b9b61961d9547ae6c4ef31afcacc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1395693728584051664, guid: 1b07b9b61961d9547ae6c4ef31afcacc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1395693728584051664, guid: 1b07b9b61961d9547ae6c4ef31afcacc, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1395693728584051664, guid: 1b07b9b61961d9547ae6c4ef31afcacc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 1395693728584051664, guid: 1b07b9b61961d9547ae6c4ef31afcacc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 1395693728584051664, guid: 1b07b9b61961d9547ae6c4ef31afcacc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.024138726
+      objectReference: {fileID: 0}
+    - target: {fileID: 1395693728584051664, guid: 1b07b9b61961d9547ae6c4ef31afcacc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1395693728584051664, guid: 1b07b9b61961d9547ae6c4ef31afcacc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1395693728584051664, guid: 1b07b9b61961d9547ae6c4ef31afcacc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1395693728584051664, guid: 1b07b9b61961d9547ae6c4ef31afcacc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1395693728584051664, guid: 1b07b9b61961d9547ae6c4ef31afcacc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1395693728584051664, guid: 1b07b9b61961d9547ae6c4ef31afcacc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1395693728584051664, guid: 1b07b9b61961d9547ae6c4ef31afcacc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1395693728584051664, guid: 1b07b9b61961d9547ae6c4ef31afcacc, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3534606315907832746, guid: 1b07b9b61961d9547ae6c4ef31afcacc, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b87e35d69439be5419f9b9872cd03cab, type: 3}
+    - target: {fileID: 3534606315907832746, guid: 1b07b9b61961d9547ae6c4ef31afcacc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6654286421888625085, guid: 1b07b9b61961d9547ae6c4ef31afcacc, type: 3}
+      propertyPath: m_Name
+      value: MortarEndless Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192030477921449943, guid: 1b07b9b61961d9547ae6c4ef31afcacc, type: 3}
+      propertyPath: AudioSource
+      value: 
+      objectReference: {fileID: 8406879432619578633}
+    - target: {fileID: 9192030477921449943, guid: 1b07b9b61961d9547ae6c4ef31afcacc, type: 3}
+      propertyPath: BorageSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c627233a8aaf4e046bf95a6018e4bd21, type: 3}
+    - target: {fileID: 9192030477921449943, guid: 1b07b9b61961d9547ae6c4ef31afcacc, type: 3}
+      propertyPath: AlfalfaSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a6a069a0eb7efef44a508da1d31ece35, type: 3}
+    - target: {fileID: 9192030477921449943, guid: 1b07b9b61961d9547ae6c4ef31afcacc, type: 3}
+      propertyPath: AllspiceSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f11a89eb24f9a3c4eb4e271de8f980d2, type: 3}
+    - target: {fileID: 9192030477921449943, guid: 1b07b9b61961d9547ae6c4ef31afcacc, type: 3}
+      propertyPath: FumitorySprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4d8f049b7fcf1b44b8a88d59467bafe2, type: 3}
+    - target: {fileID: 9192030477921449943, guid: 1b07b9b61961d9547ae6c4ef31afcacc, type: 3}
+      propertyPath: CelandineSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6d5590b16015a244f8592ce3b5d9b816, type: 3}
+    - target: {fileID: 9192030477921449943, guid: 1b07b9b61961d9547ae6c4ef31afcacc, type: 3}
+      propertyPath: HollyhockSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6830e9afb0a50324cbca8f2dbebc3871, type: 3}
+    - target: {fileID: 9192030477921449943, guid: 1b07b9b61961d9547ae6c4ef31afcacc, type: 3}
+      propertyPath: BelladonnaSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2edfc560f98d48b44bcf719ce3dcf479, type: 3}
+    - target: {fileID: 9192030477921449943, guid: 1b07b9b61961d9547ae6c4ef31afcacc, type: 3}
+      propertyPath: SnapdragonSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 96978772956ecbe47b92cab8c489cda8, type: 3}
+    - target: {fileID: 9192030477921449943, guid: 1b07b9b61961d9547ae6c4ef31afcacc, type: 3}
+      propertyPath: BabysBreathSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a37719995a3d82643a9755d7fc58738f, type: 3}
+    - target: {fileID: 9192030477921449943, guid: 1b07b9b61961d9547ae6c4ef31afcacc, type: 3}
+      propertyPath: 'MinigameIngredientList.Array.data[0]'
+      value: Alfalfa
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192030477921449943, guid: 1b07b9b61961d9547ae6c4ef31afcacc, type: 3}
+      propertyPath: 'MinigameIngredientList.Array.data[1]'
+      value: Allspice
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192030477921449943, guid: 1b07b9b61961d9547ae6c4ef31afcacc, type: 3}
+      propertyPath: 'MinigameIngredientList.Array.data[2]'
+      value: BabysBreath
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192030477921449943, guid: 1b07b9b61961d9547ae6c4ef31afcacc, type: 3}
+      propertyPath: 'MinigameIngredientList.Array.data[3]'
+      value: Belladonna
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192030477921449943, guid: 1b07b9b61961d9547ae6c4ef31afcacc, type: 3}
+      propertyPath: 'MinigameIngredientList.Array.data[4]'
+      value: Borage
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192030477921449943, guid: 1b07b9b61961d9547ae6c4ef31afcacc, type: 3}
+      propertyPath: 'MinigameIngredientList.Array.data[5]'
+      value: Celandine
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192030477921449943, guid: 1b07b9b61961d9547ae6c4ef31afcacc, type: 3}
+      propertyPath: 'MinigameIngredientList.Array.data[6]'
+      value: Fumitory
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192030477921449943, guid: 1b07b9b61961d9547ae6c4ef31afcacc, type: 3}
+      propertyPath: 'MinigameIngredientList.Array.data[7]'
+      value: Hollyhock
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192030477921449943, guid: 1b07b9b61961d9547ae6c4ef31afcacc, type: 3}
+      propertyPath: 'MinigameIngredientList.Array.data[8]'
+      value: Snapdragon
+      objectReference: {fileID: 0}
+    - target: {fileID: 9200992981535615699, guid: 1b07b9b61961d9547ae6c4ef31afcacc, type: 3}
+      propertyPath: m_Size.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9200992981535615699, guid: 1b07b9b61961d9547ae6c4ef31afcacc, type: 3}
+      propertyPath: m_Size.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9200992981535615699, guid: 1b07b9b61961d9547ae6c4ef31afcacc, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 8.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 9200992981535615699, guid: 1b07b9b61961d9547ae6c4ef31afcacc, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 8.48
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 9192030477921449943, guid: 1b07b9b61961d9547ae6c4ef31afcacc, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6654286421888625085, guid: 1b07b9b61961d9547ae6c4ef31afcacc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1567687427825865152}
+    - targetCorrespondingSourceObject: {fileID: 6654286421888625085, guid: 1b07b9b61961d9547ae6c4ef31afcacc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2914326425335521371}
+    - targetCorrespondingSourceObject: {fileID: 6654286421888625085, guid: 1b07b9b61961d9547ae6c4ef31afcacc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8406879432619578633}
+  m_SourcePrefab: {fileID: 100100000, guid: 1b07b9b61961d9547ae6c4ef31afcacc, type: 3}
+--- !u!1 &1188669171467265204 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6654286421888625085, guid: 1b07b9b61961d9547ae6c4ef31afcacc, type: 3}
+  m_PrefabInstance: {fileID: 5487572850525326601}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1567687427825865152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188669171467265204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba8b78359db3d4246b8866575b2622ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MinigameIngredientList:
+  - Alfalfa
+  - Allspice
+  - BabysBreath
+  - Belladonna
+  - Borage
+  - Celandine
+  - Fumitory
+  - Hollyhock
+  - Snapdragon
+  CurrentRandomSequence:
+  - 
+  - 
+  - 
+  SequenceDisplay:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  pestle: {fileID: 0}
+  AlfalfaSprite: {fileID: 21300000, guid: a6a069a0eb7efef44a508da1d31ece35, type: 3}
+  AllspiceSprite: {fileID: 21300000, guid: f11a89eb24f9a3c4eb4e271de8f980d2, type: 3}
+  BabysBreathSprite: {fileID: 21300000, guid: a37719995a3d82643a9755d7fc58738f, type: 3}
+  BelladonnaSprite: {fileID: 21300000, guid: 2edfc560f98d48b44bcf719ce3dcf479, type: 3}
+  BorageSprite: {fileID: 21300000, guid: c627233a8aaf4e046bf95a6018e4bd21, type: 3}
+  CelandineSprite: {fileID: 21300000, guid: 6d5590b16015a244f8592ce3b5d9b816, type: 3}
+  FumitorySprite: {fileID: 21300000, guid: 4d8f049b7fcf1b44b8a88d59467bafe2, type: 3}
+  HollyhockSprite: {fileID: 21300000, guid: 6830e9afb0a50324cbca8f2dbebc3871, type: 3}
+  SnapdragonSprite: {fileID: 21300000, guid: 96978772956ecbe47b92cab8c489cda8, type: 3}
+  IsIngredientDraggable: 1
+  TimeLimit: 60
+  TimerText: {fileID: 0}
+  IsTimerRunning: 0
+  pause: {fileID: 0}
+  failPopUp: {fileID: 0}
+  instruct: {fileID: 0}
+  successPopUp: {fileID: 0}
+  AudioSource: {fileID: 8406879432619578633}
+--- !u!114 &2914326425335521371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188669171467265204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f74485e5846f4a449deb9d138991776, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameIsPaused: 0
+  MG: {fileID: 0}
+  C: {fileID: 0}
+  PM: {fileID: 0}
+  instruct: {fileID: 0}
+--- !u!82 &8406879432619578633
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188669171467265204}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: a079ded521ae51b4dbbe71628fe57cba, type: 3}
+  m_Resource: {fileID: 8300000, guid: a079ded521ae51b4dbbe71628fe57cba, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.701
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

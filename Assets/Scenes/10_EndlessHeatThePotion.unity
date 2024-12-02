@@ -128,7 +128,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3785119}
   - component: {fileID: 3785118}
-  - component: {fileID: 3785120}
+  - component: {fileID: 3785121}
   m_Layer: 0
   m_Name: bar bottle
   m_TagString: Untagged
@@ -209,7 +209,7 @@ Transform:
   - {fileID: 207331560}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3785120
+--- !u!114 &3785121
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -218,12 +218,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3785117}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12fb74eda4738744db65edecc4711e94, type: 3}
+  m_Script: {fileID: 11500000, guid: 4fbd70c1a727cf846b1f864cfea2b874, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ProgressBarFill: {fileID: 648185625}
   SafeZone: {fileID: 1901757484}
-  GameManager: {fileID: 1158220501}
+  GameManager: {fileID: 1158220505}
   ProgressSpeed: 0.2
   SafeZoneDirectionText: {fileID: 0}
   IsIncreasing: 1
@@ -676,6 +676,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4357769460400530880, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
+      propertyPath: m_SortingOrder
+      value: -20
+      objectReference: {fileID: 0}
     - target: {fileID: 7198306776967819132, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
       propertyPath: m_Name
       value: MainMenuBar
@@ -727,7 +731,7 @@ PrefabInstance:
     - target: {fileID: 8999638242919754680, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 935177798}
+      objectReference: {fileID: 0}
     - target: {fileID: 8999638242919754680, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Intructions
@@ -742,7 +746,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3538828339910884104, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 935177798}
+      addedObject: {fileID: 935177807}
   m_SourcePrefab: {fileID: 100100000, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
 --- !u!1 &466807599 stripped
 GameObject:
@@ -1091,7 +1095,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3538828339910884104, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
   m_PrefabInstance: {fileID: 361347237}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &935177798
+--- !u!114 &935177807
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1100,12 +1104,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 935177797}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2436d7eb7c63161429cbaefac1ecbb43, type: 3}
+  m_Script: {fileID: 11500000, guid: 6118926f969e0d44586cee772524a1f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   instruct: {fileID: 935177797}
   pause: {fileID: 763176025}
-  heat: {fileID: 1158220501}
+  heat: {fileID: 1158220505}
 --- !u!1 &986980301
 GameObject:
   m_ObjectHideFlags: 0
@@ -1251,39 +1255,16 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1158220502}
-  - component: {fileID: 1158220501}
+  - component: {fileID: 1158220505}
   - component: {fileID: 1158220503}
   - component: {fileID: 1158220504}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: GameManagerEndless
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1158220501
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1158220500}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5ee00b802b323d4ca9767ac0d7e72ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ProgressBarController: {fileID: 3785120}
-  HeatKnobController: {fileID: 2007982008}
-  DirectionArrowController: {fileID: 1981698752}
-  RequiredSuccesses: 3
-  FeedbackText: {fileID: 986980303}
-  PotionSpriteRenderer: {fileID: 545699542}
-  pause: {fileID: 763176025}
-  failPopUp: {fileID: 616998923}
-  instruct: {fileID: 935177797}
-  successPopUp: {fileID: 466807599}
-  bar: {fileID: 3785117}
 --- !u!4 &1158220502
 Transform:
   m_ObjectHideFlags: 0
@@ -1413,6 +1394,29 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1158220505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1158220500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 607aae229f656b348983a46f63e8690b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ProgressBarController: {fileID: 3785121}
+  HeatKnobController: {fileID: 2007982008}
+  DirectionArrowController: {fileID: 1981698752}
+  RequiredSuccesses: 3
+  FeedbackText: {fileID: 986980303}
+  PotionSpriteRenderer: {fileID: 545699542}
+  pause: {fileID: 763176025}
+  failPopUp: {fileID: 616998923}
+  instruct: {fileID: 935177797}
+  successPopUp: {fileID: 466807599}
+  bar: {fileID: 3785117}
 --- !u!1 &1429357779
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using TMPro;
 
-public class Mortar : MonoBehaviour
+public class MortarEndless : MonoBehaviour
 {
     public string[] MinigameIngredientList; // List of all nine minigame ingredients.
     public string[] CurrentRandomSequence = new string[3];
@@ -159,7 +159,7 @@ public class Mortar : MonoBehaviour
     {
         if (collision.CompareTag("Ingredient"))
         {
-            MortarIngredient ingredient = collision.GetComponent<MortarIngredient>();
+            MortarIngredientEndless ingredient = collision.GetComponent<MortarIngredientEndless>();
             if (ingredient != null)
             {
                 DraggedIngredients.Add(ingredient.IngredientName);
@@ -264,17 +264,35 @@ public class Mortar : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
 
+        int MinSceneIndex = 7;
+        int MaxSceneIndex = 11;
         int CurrentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
-        int NextSceneIndex = CurrentSceneIndex + 1;
+        // Check to make sure that MaxSceneIndex doesn't exceed the number of scenes in build settings.
+        MaxSceneIndex = Mathf.Min(MaxSceneIndex, SceneManager.sceneCountInBuildSettings - 1);
 
-        if (NextSceneIndex<SceneManager.sceneCountInBuildSettings)
+        // Create a list of possible scene indices excluding the current scene to avoid repeating the same scene for next minigame.
+        List<int> PossibleSceneIndices = new List<int>();
+        for (int i = MinSceneIndex; i <= MaxSceneIndex; i++)
         {
-            SceneManager.LoadScene(NextSceneIndex);
+            if (i != CurrentSceneIndex)
+            {
+                PossibleSceneIndices.Add(i);
+            }
+        }
+
+        if (PossibleSceneIndices.Count > 0)
+        {
+            // Select a random index from the list of possible scene indices.
+            int RandomIndex = Random.Range(0, PossibleSceneIndices.Count);
+            int RandomSceneIndex = PossibleSceneIndices[RandomIndex];
+
+            // Load the randomly selected scene other than the current scene.
+            SceneManager.LoadScene(RandomSceneIndex);
         }
         else
         {
-            Debug.Log("No more scenes to load.");
+            Debug.LogWarning("No other scenes available to load, try adding scenes to the build settings.");
         }
     }
 private void GameOver()

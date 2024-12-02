@@ -2,11 +2,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class ProgressBarController : MonoBehaviour
+public class ProgressBarControllerEndless : MonoBehaviour
 {
     public SpriteRenderer ProgressBarFill;
     public SpriteRenderer SafeZone;
-    public HeatThePotionGameManager GameManager;
+    public HeatThePotionGameManagerEndless GameManager;
     public float ProgressSpeed = 0.2f;
     public TextMeshProUGUI SafeZoneDirectionText;
 
