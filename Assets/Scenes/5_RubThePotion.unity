@@ -1311,7 +1311,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameIsPaused: 0
-  MG: {fileID: 1400723360}
+  MG: {fileID: 1490566096}
   C: {fileID: 1095317059}
   PM: {fileID: 553307021}
   instruct: {fileID: 273542665}
@@ -1992,11 +1992,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1165091670}
   m_CullTransparentMesh: 1
---- !u!1 &1400723360 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4541484211764290686, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
-  m_PrefabInstance: {fileID: 1490566092}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1421569820
 GameObject:
   m_ObjectHideFlags: 0
@@ -2258,6 +2253,11 @@ GameObject:
 --- !u!1 &1490566095 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2193756377235899898, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
+  m_PrefabInstance: {fileID: 1490566092}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1490566096 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8512238378994371884, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
   m_PrefabInstance: {fileID: 1490566092}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1529034619

@@ -912,6 +912,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 935177798}
   m_SourcePrefab: {fileID: 100100000, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
+--- !u!1 &361347238 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8512238378994371884, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
+  m_PrefabInstance: {fileID: 361347237}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &466807599 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 691456834523076972, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
@@ -1249,11 +1254,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f74485e5846f4a449deb9d138991776, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &790279542 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4541484211764290686, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
-  m_PrefabInstance: {fileID: 361347237}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &935177797 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3538828339910884104, guid: f20a0700c2251cb4f835cc818a8f2173, type: 3}
@@ -1480,7 +1480,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameIsPaused: 0
-  MG: {fileID: 790279542}
+  MG: {fileID: 361347238}
   C: {fileID: 1687093974}
   PM: {fileID: 763176024}
   instruct: {fileID: 935177797}
