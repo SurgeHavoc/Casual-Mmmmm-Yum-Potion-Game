@@ -77,8 +77,8 @@ public class SystemCursorController : MonoBehaviour
 
         Vector2 MousePosition = mouse.position.ReadValue();
 
-        // Calculate the new position.
-        MousePosition += MoveInput * CursorSpeed * Time.deltaTime;
+        // Calculate the new position. Using unscaledDeltaTime works even when the game is paused (Time scale = 0).
+        MousePosition += MoveInput * CursorSpeed * Time.unscaledDeltaTime;
 
         // Clamp the mouse position to the viewport.
         MousePosition.x = Mathf.Clamp(MousePosition.x, 0, Screen.width - 1);
