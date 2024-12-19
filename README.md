@@ -5,7 +5,7 @@ Brewjeria is a collection of five apothecary themed minigames developed using Un
 
 ### Team Composition
 - 1 Programmer (Me: Antonio)
-- 2 Level Designers
+- 2 Game Designers
 - 1 UI Designer
 - 4 Artists
 
@@ -34,7 +34,22 @@ This game takes inspiration from titles such as Potion Craft, Potionomics, and W
    - **How to Play:**
         - When the timing is right, press the "Grab!" button to attempt to pick up ingredients with the claw hand.
         - Collect all of the ingredients before the timer runs out.
-   - **Minigame 5: Rub the Potion** (A WIP)
-   - **Objective:** N/A
+   - **Minigame 3: Mortar and Pestle**
+   - **Objective:** Drag the correct ingredients from the shelf into the pestle and the smash them within the time limit.
    - **How to Play:**
-        - To exit, press the "Return to Main Menu" button.
+        - Drag and drop the correct ingredients from the shelf while using the sequence display as a guide for what the current order is.
+        - Once the correct ingredients are in, the pestle can now be moved, move it up and down to the smash the ingredients in the pestle.
+   - **Minigame 4: Heat the Potion**
+   - **Objective:** Collect all of the ingredients using a claw hand.
+   - **How to Play:**
+        - The heat progress bar will progress into a green area.
+        - In the green area, the knob can be safely turned to heat the potion.
+        - Use the directional arrow as a guide as to which direction to turn the knob.
+        - Once the heat progress bar has progressed past the green area, you should get feedback on whether or not the action was correct.
+        - Once the heat progress bar progresses to 100%, the heat progress bar will reset to zero, then progress again.
+        - There are three sequences involved in heating the potion, then the player can progress on to the next minigame.
+   - **Minigame 5: Rub the Potion**
+   - **Objective:** Rub the potion to develop it.
+   - **How to Play:**
+        - Read the Instructions that show up before the minigame starts to figure out how to develop the potion.
+        - Pay attention and don't forget.
